@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             $admin->role = 'ADMIN';
             $admin->email = 'admin@example.com';
             $admin->password = Hash::make('adminpass');
+            $admin->room_number = '000';
             $admin->save();
         }
 
@@ -33,6 +34,7 @@ class UserSeeder extends Seeder
             $user->role = 'USER';
             $user->email = 'user01@example.com';
             $user->password = Hash::make('userpass');
+            $user->room_number = '999';
             $user->save();
         }
 
@@ -43,6 +45,7 @@ class UserSeeder extends Seeder
             $user->role = 'EDITOR';
             $user->email = 'organization01@example.com';
             $user->password = Hash::make('organizationpass');
+            $user->room_number = '999';
             $user->save();
         }
 

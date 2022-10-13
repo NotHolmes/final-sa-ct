@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use App\Models\Status;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Complaint>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Maintenance>
  */
-class ComplaintFactory extends Factory
+class MaintenanceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,8 +21,7 @@ class ComplaintFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id,
             'status_id' => Status::inRandomOrder()->first()->id,
-            'title' => fake()->realText(30),
-            'description' => fake()->realText(200)
+            'detail' => fake()->realText(200)
         ];
     }
 }

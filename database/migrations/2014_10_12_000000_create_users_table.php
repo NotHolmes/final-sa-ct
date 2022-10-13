@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable(); // timestamp/DATETIME
             $table->string('password'); // varchar(60)
             $table->rememberToken(); // 'remember_token'
+            $table->string('room_number');
             $table->timestamps(); // DATETIME 'created_at' , 'updated_at'
         });
     }
