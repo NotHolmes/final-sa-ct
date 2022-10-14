@@ -18,10 +18,6 @@
     @apply h-48 w-96 object-cover
 }
 
-body{
-  background: rgb(220 252 231);
-}
-
 button {
   background: none;
   border: 2px solid;

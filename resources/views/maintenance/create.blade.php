@@ -6,7 +6,7 @@
             ส่งเรื่องร้องเรียน
         </h1>
 
-        <form action="{{ route('complaints.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('maintenance.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="relative z-0 mb-6 w-full group">

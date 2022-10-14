@@ -39,8 +39,8 @@ class ComplaintController extends Controller
             $complaint->where('status', $request->status);
         }
 
-        return view("complaints.index", [
-            'complaints' => $complaints,
+        return view("maintenance.index", [
+            'maintenance' => $complaints,
             'statuses' => $statuses
         ]);
     }
@@ -53,7 +53,7 @@ class ComplaintController extends Controller
     public function create()
     {
         $this->authorize('create', Complaint::class);
-        return view('complaints.create');
+        return view('maintenance.create');
     }
 
     /**
@@ -97,16 +97,16 @@ class ComplaintController extends Controller
 
         $complaint->save();
 
-        return redirect()->route('complaints.show', ['complaint' => $complaint->id]);
+        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
         //                     -------------------------^
         //                    |
-        // GET|HEAD  complaints/{complaint} ......... complaints.show › ComplaintController@show
+        // GET|HEAD  maintenance/{complaint} ......... maintenance.show › ComplaintController@show
     }
 
     public function storeImage(Complaint $complaint, Request $request){
         $file = $request->file('image');
         $filename = date('YmdHi')."_".$file->getClientOriginalName();
-        $file->move(public_path('/images/complaints'), $filename);
+        $file->move(public_path('/images/maintenance'), $filename);
         $complaint['image'] = $filename;
     }
 
@@ -124,7 +124,7 @@ class ComplaintController extends Controller
     public function show(Complaint $complaint)    // Dependency Injection
     {
         $statuses = Status::all();
-        return view('complaints.show', ['complaint' => $complaint, 'statuses' => $statuses]);
+        return view('maintenance.show', ['complaint' => $complaint, 'statuses' => $statuses]);
     }
 
     /**
@@ -138,7 +138,7 @@ class ComplaintController extends Controller
         $this->authorize('update', $complaint);
         $statuses = Status::all();
 
-        return view('complaints.edit', ['complaint' => $complaint, 'statuses' => $statuses]);
+        return view('maintenance.edit', ['complaint' => $complaint, 'statuses' => $statuses]);
     }
 
     /**
@@ -172,7 +172,7 @@ class ComplaintController extends Controller
 
         $complaint->save();
 
-        return redirect()->route('complaints.show', ['complaint' => $complaint->id]);
+        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
     }
 
     public function updateStatus(Request $request, Complaint $complaint){
@@ -185,7 +185,7 @@ class ComplaintController extends Controller
 
         $complaint->save();
 
-        return redirect()->route('complaints.show', ['complaint' => $complaint->id]);
+        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
     }
 
     /**
@@ -201,7 +201,7 @@ class ComplaintController extends Controller
         $title = $request->input('title');
         if ($title == $complaint->title) {
             $complaint->delete();
-            return redirect()->route('complaints.index');
+            return redirect()->route('maintenance.index');
         }
         return redirect()->back();
     }
@@ -218,18 +218,18 @@ class ComplaintController extends Controller
 //        $complaint->comments()->save($comment);
 //
 //        // dd($comment->isEditor);
-//        return redirect()->route('complaints.show', ['complaint' => $complaint->id]);
+//        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
 //    }
 
     public function search(Request $request) {
         $complaints = Complaint::filterTitle($request->input('search'))->get();
 //        dd($filter_text);
-        return view('complaints.index', ['complaints' => $complaints]);
+        return view('maintenance.index', ['maintenance' => $complaints]);
     }
 
     public function popular() {
         $complaints = Complaint::popular()->get();
-        return view('complaints.index', ['complaints' => $complaints]);
+        return view('maintenance.index', ['maintenance' => $complaints]);
     }
 
 

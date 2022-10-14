@@ -13,7 +13,7 @@
         <div class="horizontal bg-black my-1 px-8 py-2 flex flex-wrap justify-between space-y-6 ">
             <br>
             @foreach($status->complaints as $complaint)
-                <a href="{{ route('complaints.show', ['complaint' => $complaint->id]) }}"
+                <a href="{{ route('maintenance.show', ['complaint' => $complaint->id]) }}"
                    class="horizontal block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md hover:bg-emerald-100 hover:border-emerald-400 border-transparent border-2 hover:p-6">
                    @if(!is_null($complaint->image))
                         <div class="relative  ">

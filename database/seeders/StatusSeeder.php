@@ -27,9 +27,9 @@ class StatusSeeder extends Seeder
             });
         }
 
-        // $this->command->line("Generating statuses for all complaints");
-        // $complaints = Complaint::get();
-        // $complaints->each(function($complaint, $key) {
+        // $this->command->line("Generating statuses for all maintenance");
+        // $maintenance = Complaint::get();
+        // $maintenance->each(function($complaint, $key) {
         //     $n = fake()->numberBetween(1, 5);
         //     //$n = 1;
         //     $status_ids = Status::inRandomOrder()->limit($n)->get()->pluck(['id'])->all();

@@ -83,7 +83,7 @@ class ChartController extends Controller
     public function show($id)
     {
         $complaint = \App\Models\Complaint::all();
-        return view('complaints.show', ['complaint' => $complaint]);
+        return view('maintenance.show', ['complaint' => $complaint]);
     }
 
     /**

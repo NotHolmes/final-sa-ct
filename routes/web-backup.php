@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->to('/complaints');
+    return redirect()->to('/maintenance');
 });
 
                         // Closure
@@ -26,10 +26,10 @@ Route::get('/pages', [\App\Http\Controllers\PageController::class, 'index']);
 
 Route::get('/pages/{id}', [\App\Http\Controllers\PageController::class, 'show']);
 
-Route::complaint('/complaints/{complaint}/comments/store', [\App\Http\Controllers\ComplaintController::class, 'storeComment'])
-    ->name('complaints.comments.store');
+Route::complaint('/maintenance/{complaint}/comments/store', [\App\Http\Controllers\ComplaintController::class, 'storeComment'])
+    ->name('maintenance.comments.store');
 
-Route::resource('/complaints', \App\Http\Controllers\ComplaintController::class);
+Route::resource('/maintenance', \App\Http\Controllers\ComplaintController::class);
 
 Route::resource('/tags', \App\Http\Controllers\TagController::class);
 

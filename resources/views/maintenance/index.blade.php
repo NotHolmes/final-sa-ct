@@ -1,4 +1,4 @@
-{{-- resources/views/complaints/index.blade.php --}}
+{{-- resources/views/maintenance/index.blade.php --}}
 @extends('layouts.main')
 
 @section('content')
@@ -20,6 +20,72 @@
                         <span class="text-sm text-gray-500 dark:text-gray-300">On: 20 October 2019</span>
                     </div>
                 </div>
+
+                @foreach($maintenances as $maintenance)
+                    <div class="lg:flex">
+                        <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+
+                        <div class="flex flex-col justify-between py-6 lg:mx-6">
+                            <a href="{{ route('maintenance.show', ['maintenance' => $maintenance->id]) }}" class="text-xl font-semibold text-gray-800 hover:underline dark:text-white ">
+                                {{ $maintenance->detail }}
+                            </a>
+
+                            <span class="text-sm text-gray-500 dark:text-gray-300">On: 20 October 2019</span>
+                        </div>
+                    </div>
+
+                @endforeach
+
+
+
+                {{--        <div class="horizontal bg-black my-1 px-8 py-2 flex flex-wrap justify-between space-y-6 ">--}}
+                {{--            <br>--}}
+                {{--            @foreach($maintenance as $complaint)--}}
+
+                {{--                <a href="{{ route('maintenance.show', ['complaint' => $complaint->id]) }}"--}}
+                {{--                   class="horizontal block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md hover:bg-emerald-100 hover:border-emerald-400 border-transparent border-2 hover:p-6">--}}
+                {{--                   @if(!is_null($complaint->image))--}}
+                {{--                        <div class="relative  ">--}}
+
+                {{--                                <div class="flex content-center image-complaint ">--}}
+                {{--                                    <img src="/images/maintenance/{{$complaint->image}}" class="mx-auto" alt="">--}}
+                {{--                                </div>--}}
+                {{--                        </div>--}}
+                {{--                    @endif--}}
+
+                {{--                    <div class="flex-content ">--}}
+                {{--                        <div class="vertical">--}}
+                {{--                            <div class="card activity-card back-white">--}}
+                {{--                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">--}}
+                {{--                                    {{ $complaint->title }}--}}
+                {{--                                </h5>--}}
+                {{--                            </div>--}}
+
+                {{--                            <div class="card acivity-card back-white">--}}
+                {{--                                <h5 class="mb-2 text-xl tracking-tight text-gray-900 ">--}}
+                {{--                                    {{ $complaint->description }}--}}
+                {{--                                </h5>--}}
+
+                {{--                            </div>--}}
+
+                {{--                            <div class="card activity-card back-white">--}}
+                {{--                                <p class="bg-orange-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2">--}}
+                {{--                                    <img src="/images/icons/status.jpg" width="25" height="25" alt="Logo fill-current text-gray-500"--}}
+                {{--                                         class="inline mr-1" viewBox="0 0 16 16"/>--}}
+                {{--                                    {{ $complaint->status->name }}--}}
+                {{--                                </p>--}}
+                {{--                            </div>--}}
+
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </a>--}}
+
+
+                {{--            @endforeach--}}
+
+                {{--        </div>--}}
+
+
 
 
 {{--                <div class="lg:flex">--}}
@@ -99,15 +165,15 @@
 
 {{--        <div class="horizontal bg-black my-1 px-8 py-2 flex flex-wrap justify-between space-y-6 ">--}}
 {{--            <br>--}}
-{{--            @foreach($complaints as $complaint)--}}
+{{--            @foreach($maintenance as $complaint)--}}
 
-{{--                <a href="{{ route('complaints.show', ['complaint' => $complaint->id]) }}"--}}
+{{--                <a href="{{ route('maintenance.show', ['complaint' => $complaint->id]) }}"--}}
 {{--                   class="horizontal block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md hover:bg-emerald-100 hover:border-emerald-400 border-transparent border-2 hover:p-6">--}}
 {{--                   @if(!is_null($complaint->image))--}}
 {{--                        <div class="relative  ">--}}
 
 {{--                                <div class="flex content-center image-complaint ">--}}
-{{--                                    <img src="/images/complaints/{{$complaint->image}}" class="mx-auto" alt="">--}}
+{{--                                    <img src="/images/maintenance/{{$complaint->image}}" class="mx-auto" alt="">--}}
 {{--                                </div>--}}
 {{--                        </div>--}}
 {{--                    @endif--}}

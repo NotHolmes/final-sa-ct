@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('complaints.index');
+    return redirect()->route('maintenance.index');
 });
 
 Route::get('/dashboard', function () {
@@ -24,14 +24,16 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-//Route::post('/complaints/{complaint}/comments/store', [\App\Http\Controllers\ComplaintController::class, 'storeComment'])
-//    ->name('complaints.comments.store');
+//Route::post('/maintenance/{complaint}/comments/store', [\App\Http\Controllers\ComplaintController::class, 'storeComment'])
+//    ->name('maintenance.comments.store');
 
-Route::resource('/complaints', \App\Http\Controllers\ComplaintController::class);
+Route::resource('/maintenance', \App\Http\Controllers\MaintenanceController::class);
 
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
-Route::get('/complaints/{complaint}/{image}',[\App\Http\Controllers\ComplaintController::class,'viewImage'])->name('complaints.image.view');
+Route::get('/maintenance/{maintenance}/{image}',[\App\Http\Controllers\ComplaintController::class,'viewImage'])->name('maintenance.image.view');
+
+Route::get('/maintenance/{maintenance}',[\App\Http\Controllers\MaintenanceController::class,'show'])->name('maintenance.show');
 
 Route::resource('/chart', \App\Http\Controllers\ChartController::class);
 
@@ -39,6 +41,6 @@ Route::get('search', [\App\Http\Controllers\ComplaintController::class, 'search'
 
 Route::get('/popular', [\App\Http\Controllers\ComplaintController::class, 'popular'])->name('complaint.popular');
 
-Route::post('/{complaint}/updateStatus', [\App\Http\Controllers\ComplaintController::class, 'updateStatus'])->name('complaints.updateStatus');
+//Route::post('/{complaint}/updateStatus', [\App\Http\Controllers\ComplaintController::class, 'updateStatus'])->name('maintenance.updateStatus');
 
 

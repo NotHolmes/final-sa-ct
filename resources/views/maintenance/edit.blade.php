@@ -6,7 +6,7 @@
             แก้ไขเรื่องร้องเรียน
         </h1>
 
-        <form action="{{ route('complaints.update', ['complaint' => $complaint]) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('maintenance.update', ['complaint' => $complaint]) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -85,7 +85,7 @@
                     </p>
                 </h3>
 
-                <form action="{{ route('complaints.destroy', ['complaint' => $complaint->id]) }}" method="post">
+                <form action="{{ route('maintenance.destroy', ['complaint' => $complaint->id]) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <div class="relative z-0 mb-6 w-full group">
