@@ -42,6 +42,8 @@ Route::resource('/residents', \App\Http\Controllers\ResidentController::class);
 // ALWAYS USE GET ON TOP OF RESOURCE !!!!!
 Route::get('/maintenances/table', [\App\Http\Controllers\MaintenanceController::class, 'table'])->name('maintenances.table');
 
+Route::get('/maintenances/table/accept/{maintenance}', [\App\Http\Controllers\MaintenanceController::class, 'accept'])->name('maintenances.accept');
+
 Route::resource('/maintenances', \App\Http\Controllers\MaintenanceController::class);
 
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);

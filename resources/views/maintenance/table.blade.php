@@ -46,7 +46,7 @@
                         {{ $maintenance->created_at->format('Y M d') }}
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Accept</a>
+                        <a href="{{ route('maintenances.accept', ['maintenance' => $maintenance]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="this.style.display='none'">Accept</a>
                     </td>
                 </tr>
                 @endforeach

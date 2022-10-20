@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Checklist;
 use App\Models\Maintenance;
 use App\Models\Resident;
 use App\Models\Status;
@@ -16,9 +17,25 @@ class MaintenanceController extends Controller
 
     }
 
+
+
     public function table(Request $request){
-        $maintenances = Maintenance::all()->sortBy('created_at', SORT_REGULAR, false);
+        $maintenances = Maintenance::unAccept()->get()->sortBy('created_at', SORT_REGULAR, false);
         return view("maintenance.table", ['maintenances' => $maintenances]);
+    }
+
+    public function accept(Request $request){
+        $maintenance = Maintenance::find($request->maintenance);
+        $maintenance->is_accepted = true;
+        $maintenance->save();
+
+        $checklist = new Checklist();
+        $checklist->maintenance_id = $maintenance->id;
+        $checklist->status_id = 1;
+        $checklist->c_datetime = null;
+        $checklist->save();
+
+        return view('maintenance.table', ['maintenances' => Maintenance::unAccept()->get()->sortBy('created_at', SORT_REGULAR, false)]);
     }
 
     public function create()

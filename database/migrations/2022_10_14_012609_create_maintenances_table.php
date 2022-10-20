@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('m_image')->nullable();
             $table->text('m_detail');
+            $table->boolean('is_accepted')->default(false);
             $table->timestamps();
+
         });
     }
 

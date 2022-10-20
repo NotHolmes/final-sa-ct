@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('maintenance_status', function (Blueprint $table) {
+        Schema::create('checklist_status', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Checklist::class);
             $table->foreignIdFor(\App\Models\Status::class);  // `status_id`
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('checklist_status');
     }
 };

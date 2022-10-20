@@ -23,4 +23,9 @@ class Maintenance extends Model
     {
         return $this->belongsTo(Checklist::class);
     }
+
+    public function scopeUnAccept($query)
+    {
+        return $query->where('is_accepted', false);
+    }
 }
