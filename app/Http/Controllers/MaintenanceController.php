@@ -40,18 +40,24 @@ class MaintenanceController extends Controller
         $maintenance->user_id = auth()->user()->id;
         $maintenance->m_detail = $request->m_detail;
 
-        if($request->m_image)
-            $maintenance->m_image = $request->m_image;
+        if($request->file('m_image')){
+            $this->storeImage($request, $maintenance);
+        }
 
         $maintenance->save();
 
-        return redirect()->route('maintenances.index');
-        return redirect()->route('maintenances.show', ['maintenance' => $maintenance]);
+        $this->show($maintenance);
+    }
+
+    public function storeImage(Request $request, Maintenance $maintenance){
+        $file = $request->file('m_image');
+        $filename = date('YmdHi')."_".$file->getClientOriginalName();
+        $file->move(public_path('/images/maintenance'), $filename);
+        $maintenance['m_image'] = $filename;
     }
 
     public function show(Maintenance $maintenance)    // Dependency Injection
     {
-        $statuses = Status::all();
-        return view('maintenance.show', ['maintenance' => $maintenance, 'statuses' => $statuses]);
+        return view('maintenance.show', ['maintenance' => $maintenance]);
     }
 }

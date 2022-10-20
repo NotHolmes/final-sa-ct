@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Resident extends Model
 {
     use HasFactory;
+
+    public function maintenances()
+    {
+        return $this->hasMany(Maintenance::class);
+    }
 }

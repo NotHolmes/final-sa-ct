@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(StatusSeeder::class);
         $this->call(ResidentSeeder::class);
+        $this->call(MaintenanceSeeder::class);
 
         // \App\Models\User::factory(10)->create();
 

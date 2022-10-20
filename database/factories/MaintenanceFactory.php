@@ -20,8 +20,8 @@ class MaintenanceFactory extends Factory
     {
         return [
             'user_id' => User::inRandomOrder()->first()->id,
-            'image' => fake()->imageUrl(640, 480, 'cats'),
-            'detail' => fake()->realText(200)
+            'm_image' => null,
+            'm_detail' => fake()->realText(200)
         ];
     }
 }

@@ -43,8 +43,6 @@ Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
 Route::get('/maintenances/{maintenance}/{image}',[\App\Http\Controllers\ResidentController::class,'viewImage'])->name('maintenance.image.view');
 
-Route::get('/maintenances/{maintenance}',[\App\Http\Controllers\MaintenanceController::class,'show'])->name('maintenance.show');
-
 Route::resource('/chart', \App\Http\Controllers\ChartController::class);
 
 Route::get('search', [\App\Http\Controllers\ResidentController::class, 'search'])->name('search');

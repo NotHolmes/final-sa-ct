@@ -192,16 +192,4 @@ class ResidentController extends Controller
 //        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
 //    }
 
-    public function search(Request $request) {
-        $complaints = Complaint::filterTitle($request->input('search'))->get();
-//        dd($filter_text);
-        return view('maintenance.index', ['maintenance' => $complaints]);
-    }
-
-    public function popular() {
-        $complaints = Complaint::popular()->get();
-        return view('maintenance.index', ['maintenance' => $complaints]);
-    }
-
-
 }
