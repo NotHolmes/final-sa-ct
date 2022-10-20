@@ -141,7 +141,7 @@ class ResidentController extends Controller
     {
 //        $this->authorize('update', $complaint);
 
-        return view('residents.edit', ['resident' => $resident]);
+        return view('resident.edit', ['resident' => $resident]);
     }
 
     /**

@@ -17,7 +17,9 @@ class ResidentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'r_room_number' => fake()->numberBetween(1, 100),
+            'r_name' => fake()->name(),
+            'r_tel' => fake()->phoneNumber()
         ];
     }
 }

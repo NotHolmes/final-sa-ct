@@ -18,13 +18,15 @@
                             Room number
                         </label>
 
-                        <select name = "dropdown"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
-                            <option disabled selected>Select Existed Room</option>
-                            @foreach($residents as $resident)
-                                <option value="{{$resident->id}}" >{{ $resident-> }}</option>
-                            @endforeach
-                        </select>
+                            <select name = "dropdown"
+                                    id = "dropdown"
+                                    onchange="gotoEdit()"
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
+                                <option disabled selected style="display:none">Select Existed Room</option>
+                                @foreach($residents as $resident)
+                                    <option value="{{$resident->id}}" >{{ $resident->r_room_number }}</option>
+                                @endforeach
+                            </select>
 
                     </div>
                 </div>
@@ -166,3 +168,10 @@
     </div>
 </div>
 @endsection
+
+<script>
+    function gotoEdit() {
+        console.log(document.getElementById('dropdown').value);
+        window.location.href = '/residents/edit/'.concat(document.getElementById('dropdown').value);
+    }
+</script>

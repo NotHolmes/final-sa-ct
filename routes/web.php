@@ -29,7 +29,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/residents/create',[\App\Http\Controllers\ResidentController::class,'create'])->name('residents.create');
 
-Route::get('/residents/edit',[\App\Http\Controllers\ResidentController::class,'edit'])->name('residents.edit');
+Route::get('/residents/edit/{resident}',[\App\Http\Controllers\ResidentController::class,'edit'])->name('residents.edit');
 
 Route::resource('/maintenance', \App\Http\Controllers\MaintenanceController::class);
 

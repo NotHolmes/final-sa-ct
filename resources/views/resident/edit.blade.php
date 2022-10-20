@@ -133,12 +133,19 @@
 {{--            </div>--}}
 
 {{--            <div>--}}
-                <button
+            <a href="{{ route('residents.create') }}">
+                <button type="button"
                     class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
                 >
-                    Submit
+                    Back
                 </button>
-            </div>
+            </a>
+
+            <button
+                class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+            >
+                Submit
+            </button>
         </form>
     </div>
 </div>
