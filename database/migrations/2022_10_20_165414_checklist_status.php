@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('maintenance_status', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Maintenance::class); // `maintenance_id`
+            $table->foreignIdFor(\App\Models\Checklist::class);
             $table->foreignIdFor(\App\Models\Status::class);  // `status_id`
             $table->timestamps();
         });

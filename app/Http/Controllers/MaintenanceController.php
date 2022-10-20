@@ -32,6 +32,23 @@ class MaintenanceController extends Controller
         return view('maintenance.create');
     }
 
+    public function store(Request $request)
+    {
+//        $this->authorize('create', Complaint::class);
+
+        $maintenance = new Maintenance();
+        $maintenance->user_id = auth()->user()->id;
+        $maintenance->m_detail = $request->m_detail;
+
+        if($request->m_image)
+            $maintenance->m_image = $request->m_image;
+
+        $maintenance->save();
+
+        return redirect()->route('maintenances.index');
+        return redirect()->route('maintenances.show', ['maintenance' => $maintenance]);
+    }
+
     public function show(Maintenance $maintenance)    // Dependency Injection
     {
         $statuses = Status::all();

@@ -6,7 +6,7 @@
     <!-- Learn More: https://formbold.com -->
 
     <div class="mx-auto w-full max-w-[550px]">
-        <form action="{{ route('residents.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('maintenances.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-5">
@@ -121,13 +121,3 @@
     </div>
 </div>
 @endsection
-
-<script>
-    function gotoEdit() {
-        console.log(document.getElementById('dropdown').value);
-        window.location.href = '/residents/edit/'.concat(document.getElementById('dropdown').value);
-        // let value = document.getElementById('dropdown').value;
-        {{--window.location.href = '{{ route('residents.edit', ['resident' => document.getElementById('dropdown').value]) }}';--}}
-    }
-
-</script>
