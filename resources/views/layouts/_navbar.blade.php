@@ -28,7 +28,7 @@
             <!-- Links Section -->
             <div class="items-center hidden space-x-8 lg:flex">
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
+                    cursor-pointer transition-colors duration-300" href="http://localhost">
                     Home
                 </a>
 
@@ -39,36 +39,27 @@
 
                 <a class="flex text-gray-600
                     cursor-pointer transition-colors duration-300
-                    font-semibold text-blue-600">
-                    Themes
+                    font-semibold text-blue-600" href="{{ route('complaint.create') }}">
+                    Request a maintenance
                 </a>
 
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
-                    Developers
+                    cursor-pointer transition-colors duration-300" href="">
+                    Spare part
                 </a>
 
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
-                    Pricing
+                    cursor-pointer transition-colors duration-300" href="">
+                    Checklist
                 </a>
 
-                <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
-                    Blog
-                </a>
-
-                <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
-                    About Us
-                </a>
             </div>
 
             <!-- Icon Menu Section -->
             <div class="flex items-center space-x-5">
                 <!-- Register -->
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
+                    cursor-pointer transition-colors duration-300" href="http://localhost/register">
 
                     <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"
@@ -83,7 +74,7 @@
                 <!-- Login -->
                 <a class="flex text-gray-600
                     cursor-pointer transition-colors duration-300
-                    font-semibold text-blue-600">
+                    font-semibold text-blue-600" href="http://localhost/login">
 
                     <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"

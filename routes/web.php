@@ -33,6 +33,8 @@ Route::get('/residents/edit/{resident}',[\App\Http\Controllers\ResidentControlle
 
 Route::resource('/maintenance', \App\Http\Controllers\MaintenanceController::class);
 
+Route::get('/maintenance/create',[\App\Http\Controllers\ComplaintController::class,'create'])->name('complaint.create');
+
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
 Route::get('/maintenance/{maintenance}/{image}',[\App\Http\Controllers\ResidentController::class,'viewImage'])->name('maintenance.image.view');
