@@ -17,9 +17,8 @@ class MaintenanceController extends Controller
     }
 
     public function table(Request $request){
-        $maintenances = Maintenance::all();
-        $residents = Resident::all();
-        return view("maintenance.table", ['maintenances' => $maintenances, 'residents' => $residents]);
+        $maintenances = Maintenance::all()->sortBy('created_at', SORT_REGULAR, false);
+        return view("maintenance.table", ['maintenances' => $maintenances]);
     }
 
     public function create()

@@ -40,36 +40,16 @@
                         {{ $maintenance->user->name }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="{{ route('maintenances.show', ['maintenance' => $maintenance]) }}">{{ substr($maintenance->m_detail, 0, 7) }}...</a>
+                        <a href="{{ route('maintenances.show', ['maintenance' => $maintenance]) }}" class="hover:text-blue-600 hover:dark:text-blue-500 hover:underline">{{ substr($maintenance->m_detail, 0, 7) }}...</a>
                     </td>
                     <td class="px-6 py-4">
                         {{ $maintenance->created_at->format('Y M d') }}
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Accept</a>
                     </td>
                 </tr>
                 @endforeach
-                <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
-                    </td>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                        Apple MacBook Pro 17"
-                    </th>
-                    <td class="px-6 py-4">
-                        Sliver
-                    </td>
-                    <td class="px-6 py-4">
-                        Laptop
-                    </td>
-                    <td class="px-6 py-4">
-                        $2999
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
 {{--                <tr--}}
 {{--                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">--}}
 {{--                    <td class="w-4 p-4">--}}
