@@ -68,43 +68,20 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', Complaint::class);
+//        $this->authorize('create', Resident::class);
 
-        $validated = $request->validate([
-            'title' => ['required', 'max:255', 'min:5'],
-            'description' => ['required', 'max:1000']
-        ]);
+//        $validated = $request->validate([
+//            'title' => ['required', 'max:255', 'min:5'],
+//            'description' => ['required', 'max:1000']
+//        ]);
 
-        $complaint = new Complaint();
-        $complaint->title = $request->input('title');
-        $complaint->description = $request->input('description');
-//        $complaint->user_id = Auth::user()->id;
-        $complaint->user_id = $request->user()->id;
+        $resident = new Resident();
+        $resident->r_name = $request->r_name;
+        $resident->r_room_number = $request->r_room_number;
+        $resident->r_tel = $request->r_tel;
+        $resident->save();
 
-        $organization = $request->input('organization');
-        $complaint->organization_id = $organization;
-        $complaint->status_id = Status::first()->id;
-
-        $tag = $request->get('tag');
-
-        $complaint->tag_id = $tag;
-
-        if($request->file('image')){
-            $this->storeImage($complaint, $request);
-        }
-
-        if($request->input('anonymous') == "on")
-            $complaint->anonymous = TRUE;
-        else {
-            $complaint->anonymous = FALSE;
-        }
-
-        $complaint->save();
-
-        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
-        //                     -------------------------^
-        //                    |
-        // GET|HEAD  maintenance/{complaint} ......... maintenance.show › ComplaintController@show
+        return redirect()->route('maintenances.index');
     }
 
     public function storeImage(Complaint $complaint, Request $request){
@@ -151,31 +128,22 @@ class ResidentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Complaint $complaint)
+    public function update(Request $request, Resident $resident)
     {
-        $this->authorize('create', Complaint::class);
+//        $this->authorize('create', Complaint::class);
 
-        $validated = $request->validate([
-            'title' => ['required', 'max:255', 'min:5'],
-            'description' => ['required', 'max:1000']
-        ]);
+//        $validated = $request->validate([
+//            'title' => ['required', 'max:255', 'min:5'],
+//            'description' => ['required', 'max:1000']
+//        ]);
 
-        $complaint->title = $request->input('title');
-        $complaint->description = $request->input('description');
+//        dd(json_encode($request->all()), json_encode($resident->all()), Resident::find($resident));
+        $resident->r_name = $request->r_name;
+        $resident->r_room_number = $request->r_room_number;
+        $resident->r_tel = $request->r_tel;
+        $resident->save();
 
-        if($request->file('image')){
-            $this->storeImage($complaint, $request);
-        }
-
-        if($request->input('anonymous') == "on")
-            $complaint->anonymous = TRUE;
-        else {
-            $complaint->anonymous = FALSE;
-        }
-
-        $complaint->save();
-
-        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
+        return redirect()->route('maintenances.index');
     }
 
     public function updateStatus(Request $request, Complaint $complaint){

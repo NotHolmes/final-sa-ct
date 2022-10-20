@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('maintenance.index');
+    return redirect()->route('maintenances.index');
 });
 
 Route::get('/dashboard', function () {
@@ -27,17 +27,23 @@ require __DIR__.'/auth.php';
 //Route::post('/maintenance/{complaint}/comments/store', [\App\Http\Controllers\ComplaintController::class, 'storeComment'])
 //    ->name('maintenance.comments.store');
 
-Route::get('/residents/create',[\App\Http\Controllers\ResidentController::class,'create'])->name('residents.create');
+//Route::get('/residents/create',[\App\Http\Controllers\ResidentController::class,'create'])->name('residents.create');
+//
+//Route::post('/residents/store',[\App\Http\Controllers\ResidentController::class,'store'])->name('residents.store');
+//
+//Route::put('/residents/update',[\App\Http\Controllers\ResidentController::class,'update'])->name('residents.update');
 
 Route::get('/residents/edit/{resident}',[\App\Http\Controllers\ResidentController::class,'edit'])->name('residents.edit');
 
-Route::resource('/maintenance', \App\Http\Controllers\MaintenanceController::class);
+Route::resource('/residents', \App\Http\Controllers\ResidentController::class);
+
+Route::get('/maintenances', [\App\Http\Controllers\MaintenanceController::class, 'index'])->name('maintenances.index');
 
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
-Route::get('/maintenance/{maintenance}/{image}',[\App\Http\Controllers\ResidentController::class,'viewImage'])->name('maintenance.image.view');
+Route::get('/maintenances/{maintenance}/{image}',[\App\Http\Controllers\ResidentController::class,'viewImage'])->name('maintenance.image.view');
 
-Route::get('/maintenance/{maintenance}',[\App\Http\Controllers\MaintenanceController::class,'show'])->name('maintenance.show');
+Route::get('/maintenances/{maintenance}',[\App\Http\Controllers\MaintenanceController::class,'show'])->name('maintenance.show');
 
 Route::resource('/chart', \App\Http\Controllers\ChartController::class);
 

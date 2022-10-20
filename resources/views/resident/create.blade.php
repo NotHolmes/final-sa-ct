@@ -5,14 +5,15 @@
     <!-- Author: FormBold Team -->
     <!-- Learn More: https://formbold.com -->
     <div class="mx-auto w-full max-w-[550px]">
-        <form action="https://formbold.com/s/FORM_ID" method="POST">
+        <form action="{{ route('residents.store') }}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="-mx-3 flex flex-wrap">
 
                 {{--                // -------------------------------}}
                 <div class="w-full px-3 sm:w">
                     <div class="mb-5">
                         <label
-                            for="r_room_number"
+                            for="dropdown"
                             class="mb-3 block text-base font-medium text-[#07074D]"
                         >
                             Room number
@@ -29,6 +30,7 @@
                             </select>
 
                     </div>
+                    {{ $resident->count() }}
                 </div>
                 {{--                                // -------------------------------}}
 
@@ -54,15 +56,15 @@
                 <div class="w-full px-3 sm:w-1/2">
                     <div class="mb-5">
                         <label
-                            for="name"
+                            for="r_name"
                             class="mb-3 block text-base font-medium text-[#07074D]"
                         >
                             Name
                         </label>
                         <input
                             type="text"
-                            name="name"
-                            id="name"
+                            name="r_name"
+                            id="r_name"
                             placeholder="Name"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                         />
@@ -71,15 +73,15 @@
             </div>
             <div class="mb-5">
                 <label
-                    for="tel"
+                    for="r_tel"
                     class="mb-3 block text-base font-medium text-[#07074D]"
                 >
                     Telephone number
                 </label>
                 <input
                     type="text"
-                    name="tel"
-                    id="tel"
+                    name="r_tel"
+                    id="r_tel"
                     placeholder="Telephone number"
                     min="0"
                     class="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -160,10 +162,10 @@
 {{--            <div>--}}
                 <button
                     class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                    type="submit"
                 >
                     Submit
                 </button>
-            </div>
         </form>
     </div>
 </div>
@@ -173,5 +175,8 @@
     function gotoEdit() {
         console.log(document.getElementById('dropdown').value);
         window.location.href = '/residents/edit/'.concat(document.getElementById('dropdown').value);
+        // let value = document.getElementById('dropdown').value;
+        {{--window.location.href = '{{ route('residents.edit', ['resident' => document.getElementById('dropdown').value]) }}';--}}
     }
+
 </script>
