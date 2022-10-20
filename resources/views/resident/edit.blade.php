@@ -19,6 +19,7 @@
                             Room number
                         </label>
                         <input
+                            required
                             type="text"
                             maxlength="3"
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
@@ -39,6 +40,7 @@
                             Name
                         </label>
                         <input
+                            required
                             type="text"
                             name="r_name"
                             id="r_name"
@@ -57,6 +59,7 @@
                     Telephone number
                 </label>
                 <input
+                    required
                     type="text"
                     name="r_tel"
                     id="r_tel"
