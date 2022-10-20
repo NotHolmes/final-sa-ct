@@ -21,7 +21,6 @@ class UserSeeder extends Seeder
             $admin = new User();
             $admin->name = "Administrator S.";
             $admin->role = 'ADMIN';
-            $admin->email = 'admin@example.com';
             $admin->password = Hash::make('adminpass');
             $admin->room_number = '000';
             $admin->save();
@@ -32,7 +31,6 @@ class UserSeeder extends Seeder
             $user = new User();
             $user->name = "ยูสเซอร์ 01";
             $user->role = 'USER';
-            $user->email = 'user01@example.com';
             $user->password = Hash::make('userpass');
             $user->room_number = '999';
             $user->save();
@@ -43,7 +41,6 @@ class UserSeeder extends Seeder
             $user = new User();
             $user->name = "Organization01";
             $user->role = 'EDITOR';
-            $user->email = 'organization01@example.com';
             $user->password = Hash::make('organizationpass');
             $user->room_number = '999';
             $user->save();

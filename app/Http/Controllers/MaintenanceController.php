@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Maintenance;
+use App\Models\Resident;
 use App\Models\Status;
 use Illuminate\Http\Request;
 
@@ -11,24 +12,20 @@ class MaintenanceController extends Controller
     public function index(Request $request)
     {
         $maintenances = Maintenance::all();
-//        $complaints = Complaint::latest()->paginate(50);
-        // $statuses = Status::all()->select('status')->distinct()->get()->pluck('status');
-        $statuses = Status::all();
+        return view("maintenance.index", ['maintenances' => $maintenances]);
 
+    }
 
-        if( $request->filled('status')){
-            $maintenances->where('status', $request->status);
-        }
-
-        return view("maintenance.index", [
-            'maintenances' => $maintenances,
-            'statuses' => $statuses
-        ]);
+    public function table(Request $request){
+        $maintenances = Maintenance::all();
+        $residents = Resident::all();
+        return view("maintenance.table", ['maintenances' => $maintenances, 'residents' => $residents]);
     }
 
     public function create()
     {
 //        $this->authorize('create', Complaint::class);
+
         return view('maintenance.create');
     }
 

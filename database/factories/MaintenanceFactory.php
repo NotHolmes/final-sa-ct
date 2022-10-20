@@ -21,7 +21,9 @@ class MaintenanceFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id,
             'm_image' => null,
-            'm_detail' => fake()->realText(200)
+            'm_detail' => fake()->realText(200),
+            'created_at' => fake()->dateTimeBetween('-1 year', 'now'),
+            'updated_at' => fake()->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }

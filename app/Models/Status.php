@@ -9,8 +9,8 @@ class Status extends Model
 {
     use HasFactory;
 
-    public function complaints()
+    public function maintenances()
     {
-        return $this->hasMany(Complaint::class);
+        return $this->hasMany(Maintenance::class);
     }
 }

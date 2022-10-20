@@ -19,8 +19,8 @@ class Maintenance extends Model
         return $this->belongsTo(Resident::class);
     }
 
-    public function status()
+    public function checklist()
     {
-        return $this->belongsTo(Status::class);
+        return $this->belongsTo(Checklist::class);
     }
 }

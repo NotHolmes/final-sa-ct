@@ -47,24 +47,16 @@
                 </a>
 
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
-                    Developers
+                    cursor-pointer transition-colors duration-300"
+                    href={{ route('maintenances.table') }}>
+                    Requested maintenances
                 </a>
 
                 <a class="flex text-gray-600 hover:text-blue-500
                     cursor-pointer transition-colors duration-300">
-                    Pricing
+                    Checklists
                 </a>
 
-                <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
-                    Blog
-                </a>
-
-                <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300">
-                    About Us
-                </a>
             </div>
 
             <!-- Icon Menu Section -->

@@ -33,15 +33,18 @@ require __DIR__.'/auth.php';
 //
 //Route::put('/residents/update',[\App\Http\Controllers\ResidentController::class,'update'])->name('residents.update');
 
+
+// ALWAYS USE GET ON TOP OF RESOURCE !!!!!
 Route::get('/residents/edit/{resident}',[\App\Http\Controllers\ResidentController::class,'edit'])->name('residents.edit');
 
 Route::resource('/residents', \App\Http\Controllers\ResidentController::class);
 
+// ALWAYS USE GET ON TOP OF RESOURCE !!!!!
+Route::get('/maintenances/table', [\App\Http\Controllers\MaintenanceController::class, 'table'])->name('maintenances.table');
+
 Route::resource('/maintenances', \App\Http\Controllers\MaintenanceController::class);
 
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
-
-Route::get('/maintenances/{maintenance}/{image}',[\App\Http\Controllers\ResidentController::class,'viewImage'])->name('maintenance.image.view');
 
 Route::resource('/chart', \App\Http\Controllers\ChartController::class);
 
