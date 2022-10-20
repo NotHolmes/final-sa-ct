@@ -40,6 +40,6 @@ class UserSeeder extends Seeder
             $user->room_number = '999';
             $user->save();
 
-        User::factory(10)->create();
+        User::factory(3)->create();
     }
 }

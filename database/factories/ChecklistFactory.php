@@ -17,7 +17,8 @@ class ChecklistFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'c_datetime' => $this->faker->dateTimeBetween('-3 month', 'now'),
+            'status_id' => $this->faker->numberBetween(2, 3),
         ];
     }
 }

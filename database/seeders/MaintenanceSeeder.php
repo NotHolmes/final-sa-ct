@@ -15,7 +15,7 @@ class MaintenanceSeeder extends Seeder
      */
     public function run()
     {
-        $this->command->line("Generating 50 maintenance");
-        Maintenance::factory(50)->create();
+        $this->command->line("Generating 10 maintenance");
+        Maintenance::factory(10)->create();
     }
 }

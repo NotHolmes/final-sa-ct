@@ -46,6 +46,10 @@ Route::get('/maintenances/table/accept/{maintenance}', [\App\Http\Controllers\Ma
 
 Route::resource('/maintenances', \App\Http\Controllers\MaintenanceController::class);
 
+Route::get('/checklists/', [\App\Http\Controllers\ChecklistController::class, 'index'])->name('checklists.index');
+
+Route::get('/checklists/{checklist}', [\App\Http\Controllers\ChecklistController::class, 'show'])->name('checklists.show');
+
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
 Route::resource('/chart', \App\Http\Controllers\ChartController::class);

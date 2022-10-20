@@ -17,8 +17,6 @@ class MaintenanceController extends Controller
 
     }
 
-
-
     public function table(Request $request){
         $maintenances = Maintenance::unAccept()->get()->sortBy('created_at', SORT_REGULAR, false);
         return view("maintenance.table", ['maintenances' => $maintenances]);
@@ -59,7 +57,7 @@ class MaintenanceController extends Controller
 
         $maintenance->save();
 
-        $this->show($maintenance);
+        return view('maintenance.show', ['maintenance' => $maintenance]);
     }
 
     public function storeImage(Request $request, Maintenance $maintenance){
