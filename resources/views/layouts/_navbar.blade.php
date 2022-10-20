@@ -20,6 +20,7 @@
                     <h3 class="text-2xl font-medium text-blue-500">
                         <img class="h-10 object-cover"
                              src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg" alt="Store Logo">
+{{--                        todo : change logo--}}
                     </h3>
                 </a>
             </div>
@@ -29,6 +30,11 @@
                 <a class="flex text-gray-600 hover:text-blue-500
                     cursor-pointer transition-colors duration-300">
                     Home
+                </a>
+
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300" href="{{ route('residents.create') }}">
+                    Add resident
                 </a>
 
                 <a class="flex text-gray-600
@@ -90,17 +96,7 @@
                 </a>
             </div>
         </nav>
-{{--    </div>--}}
-{{--    <!-- Notes -->--}}
-{{--    <span class="text-center font-bold my-20">--}}
-{{--        MDI (npm i @mdi/font) reuqired for icons--}}
 
-{{--        <hr class="my-4">--}}
-
-{{--        <a href="https://egoistdeveloper.github.io/twcss-to-sass-playground/" target="_blank" class="text-blue-600">--}}
-{{--            Convetert to SASS--}}
-{{--        </a>--}}
-{{--    </span>--}}
 </div>
 <script>
     const appData = () => {
