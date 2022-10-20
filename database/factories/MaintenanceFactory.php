@@ -21,6 +21,7 @@ class MaintenanceFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id,
             'status_id' => Status::inRandomOrder()->first()->id,
+            'image' => fake()->imageUrl(640, 480, 'cats'),
             'detail' => fake()->realText(200)
         ];
     }

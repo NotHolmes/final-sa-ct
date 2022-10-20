@@ -1,57 +1,133 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="mx-8">
-        <h1 class="text-3xl py-6">
-            ส่งเรื่องร้องเรียน
-        </h1>
+<div class="flex items-center justify-center p-12">
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
 
-        <form action="{{ route('maintenance.store') }}" method="post" enctype="multipart/form-data">
+    <div class="mx-auto w-full max-w-[550px]">
+        <form action="{{ route('residents.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
-            <div class="relative z-0 mb-6 w-full group">
-                <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                    หัวข้อร้องเรียน
+            <div class="mb-5">
+                <label
+                    for="m_detail"
+                    class="mb-3 block text-base font-medium text-[#07074D]"
+                >
+                    Details
                 </label>
-                @if ($errors->has('title'))
-                    <p class="text-red-500">
-                        {{ $errors->first('title') }}
-                    </p>
-                @endif
-                <input type="text" name="title" id="title"
-                       class="bg-gray-50 border @if($errors->has('title')) border-red-300 @else border-gray-300 @endif text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                       value="{{ old('title') }}"
-                       placeholder="" required>
-            </div>
-
-            <div class="relative z-0 mb-6 w-full group">
-                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                    รายละเอียด
-                </label>
-                @if($errors->has('description'))
-                    <p class="text-red-500">
-                        {{ $errors->first('description') }}
-                    </p>
-                @endif
-                <textarea rows="4" type="text" name="description" id="description"
-                          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          required >{{ old('description') }}</textarea>
-            </div>
-
-            <div class="relative z-0 mb-6 w-full group">
-                <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">เพิ่มรูปภาพ</label>
-                    <input type="file" class="" name="image" id="image" accept=".jpg,.jpeg,.png">
-                </div>
+                <textarea
+                    required
+                    name="m_detail"
+                    id="m_detail"
+                    placeholder="Details..."
+                    class="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                ></textarea>
             </div>
 
             <div>
-                <button class="app-button" type="submit">ส่งเรื่องร้องเรียน</button>
-                <input type="checkbox" name="anonymous" id="anonymous">
-                <label for="anonymous" class="px-2">ไม่ระบุตัวตน</label>
+                <label
+                    for="m_image"
+                    class="mb-3 block text-base font-medium text-[#07074D]"
+                >
+                    Image
+                </label>
+                <input type="file" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                       required
+                       name="m_image"
+                       id="m_image"
+                       accept=".jpg,.jpeg,.png">
             </div>
 
-        </form>
-    </section>
+{{--            <div class="-mx-3 flex flex-wrap">--}}
+{{--                <div class="w-full px-3 sm:w-1/2">--}}
+{{--                    <div class="mb-5">--}}
+{{--                        <label--}}
+{{--                            for="date"--}}
+{{--                            class="mb-3 block text-base font-medium text-[#07074D]"--}}
+{{--                        >--}}
+{{--                            Date--}}
+{{--                        </label>--}}
+{{--                        <input--}}
+{{--                            type="date"--}}
+{{--                            name="date"--}}
+{{--                            id="date"--}}
+{{--                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"--}}
+{{--                        />--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="w-full px-3 sm:w-1/2">--}}
+{{--                    <div class="mb-5">--}}
+{{--                        <label--}}
+{{--                            for="time"--}}
+{{--                            class="mb-3 block text-base font-medium text-[#07074D]"--}}
+{{--                        >--}}
+{{--                            Time--}}
+{{--                        </label>--}}
+{{--                        <input--}}
+{{--                            type="time"--}}
+{{--                            name="time"--}}
+{{--                            id="time"--}}
+{{--                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"--}}
+{{--                        />--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
+{{--            <div class="mb-5">--}}
+{{--                <label class="mb-3 block text-base font-medium text-[#07074D]">--}}
+{{--                    Are you coming to the event?--}}
+{{--                </label>--}}
+{{--                <div class="flex items-center space-x-6">--}}
+{{--                    <div class="flex items-center">--}}
+{{--                        <input--}}
+{{--                            type="radio"--}}
+{{--                            name="radio1"--}}
+{{--                            id="radioButton1"--}}
+{{--                            class="h-5 w-5"--}}
+{{--                        />--}}
+{{--                        <label--}}
+{{--                            for="radioButton1"--}}
+{{--                            class="pl-3 text-base font-medium text-[#07074D]"--}}
+{{--                        >--}}
+{{--                            Yes--}}
+{{--                        </label>--}}
+{{--                    </div>--}}
+{{--                    <div class="flex items-center">--}}
+{{--                        <input--}}
+{{--                            type="radio"--}}
+{{--                            name="radio1"--}}
+{{--                            id="radioButton2"--}}
+{{--                            class="h-5 w-5"--}}
+{{--                        />--}}
+{{--                        <label--}}
+{{--                            for="radioButton2"--}}
+{{--                            class="pl-3 text-base font-medium text-[#07074D]"--}}
+{{--                        >--}}
+{{--                            No--}}
+{{--                        </label>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <div>--}}
+                <button
+                    class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                    type="submit"
+                >
+                    Submit
+                </button>
+        </form>
+    </div>
+</div>
 @endsection
+
+<script>
+    function gotoEdit() {
+        console.log(document.getElementById('dropdown').value);
+        window.location.href = '/residents/edit/'.concat(document.getElementById('dropdown').value);
+        // let value = document.getElementById('dropdown').value;
+        {{--window.location.href = '{{ route('residents.edit', ['resident' => document.getElementById('dropdown').value]) }}';--}}
+    }
+
+</script>

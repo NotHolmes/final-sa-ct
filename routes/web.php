@@ -37,7 +37,7 @@ Route::get('/residents/edit/{resident}',[\App\Http\Controllers\ResidentControlle
 
 Route::resource('/residents', \App\Http\Controllers\ResidentController::class);
 
-Route::get('/maintenances', [\App\Http\Controllers\MaintenanceController::class, 'index'])->name('maintenances.index');
+Route::resource('/maintenances', \App\Http\Controllers\MaintenanceController::class);
 
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 

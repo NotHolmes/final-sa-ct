@@ -14,7 +14,7 @@
             fixed top-0 left-0 right-0 z-10">
 
             <!-- Logo Container -->
-            <div class="flex items-center" href="{{ route('maintenance.index') }}">
+            <div class="flex items-center">
                 <!-- Logo -->
                 <a class="cursor-pointer">
                     <h3 class="text-2xl font-medium text-blue-500">
@@ -28,19 +28,22 @@
             <!-- Links Section -->
             <div class="items-center hidden space-x-8 lg:flex">
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300" href="{{ route('maintenance.index') }}">
+                    cursor-pointer transition-colors duration-300"
+                    href="{{ route('maintenances.index') }}">
                     Home
                 </a>
 
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300" href="{{ route('residents.create') }}">
+                    cursor-pointer transition-colors duration-300"
+                   href="{{ route('residents.create') }}">
                     Add resident
                 </a>
 
                 <a class="flex text-gray-600
                     cursor-pointer transition-colors duration-300
-                    font-semibold text-blue-600">
-                    Themes
+                    font-semibold text-blue-600"
+                    href={{ route('maintenances.create') }}>
+                    Request a maintenance
                 </a>
 
                 <a class="flex text-gray-600 hover:text-blue-500
@@ -68,7 +71,7 @@
             <div class="flex items-center space-x-5">
                 <!-- Register -->
                 <a class="flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300" href="{{ route('register') }}">
+                    cursor-pointer transition-colors duration-300">
 
                     <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"
@@ -83,7 +86,7 @@
                 <!-- Login -->
                 <a class="flex text-gray-600
                     cursor-pointer transition-colors duration-300
-                    font-semibold text-blue-600" href="{{ route('login') }}">
+                    font-semibold text-blue-600">
 
                     <svg class="fill-current h-5 w-5 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24"

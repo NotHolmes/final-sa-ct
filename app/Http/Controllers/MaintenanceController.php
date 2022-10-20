@@ -26,6 +26,12 @@ class MaintenanceController extends Controller
         ]);
     }
 
+    public function create()
+    {
+//        $this->authorize('create', Complaint::class);
+        return view('maintenance.create');
+    }
+
     public function show(Maintenance $maintenance)    // Dependency Injection
     {
         $statuses = Status::all();
