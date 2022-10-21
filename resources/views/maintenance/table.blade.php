@@ -34,10 +34,10 @@
                     <td class="w-4 p-4">
                     </td>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                        {{ $maintenance->user->room_number }}
+                        {{ $maintenance->resident->r_room_number }}
                     </th>
                     <td class="px-6 py-4">
-                        {{ $maintenance->user->name }}
+                        {{ $maintenance->resident->r_name }}
                     </td>
                     <td class="px-6 py-4">
                         <a href="{{ route('maintenances.show', ['maintenance' => $maintenance]) }}" class="hover:text-blue-600 hover:dark:text-blue-500 hover:underline">{{ substr($maintenance->m_detail, 0, 7) }}...</a>
