@@ -19,6 +19,6 @@ class Checklist extends Model
     }
 
     public function parts(){
-        return $this->hasMany(Part::class);
+        return $this->belongsToMany(Part::class);
     }
 }

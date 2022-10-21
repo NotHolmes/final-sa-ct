@@ -25,4 +25,16 @@ class ChecklistController extends Controller
         return view('checklist.parts', ['checklist' => $checklist, 'parts' => Part::all()]);
     }
 
+    public function update(Request $request, Checklist $checklist){
+
+//        dd($request->all());
+        foreach (Part::all() as $part) {
+            if($request->has($part->p_name)){
+                $checklist->parts()->attach($part->id);
+                $checklist->save();
+            }
+        }
+        return view('checklist.show', ['checklist' => $checklist]);
+    }
+
 }

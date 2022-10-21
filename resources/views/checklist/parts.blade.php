@@ -4,6 +4,11 @@
 
     <div class="max-w-2xl mx-auto">
 
+{{--        {{dd($checklist->maintenance->resident->r_name)}}--}}
+        <form action="{{ route('checklists.update', ['checklist' => $checklist]) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -21,11 +26,12 @@
                     </th>
                     <th scope="col" class="px-6 py-3">
                         {{--                        <span class="sr-only">Edit</span>--}}
-{{--                        <a href="{{ route('checklists.addParts') }}" class="text-xs text-blue-600 dark:text-blue-500 hover:underline">CONFIRM USE</a>--}}
+                        <button type="submit" class="text-xs text-blue-600 dark:text-blue-500 hover:underline border-0">CONFIRM USE</button>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
+{{--                {{$parts->count()}}--}}
                 @foreach($parts as $part)
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -42,13 +48,14 @@
                         </td>
                         <td class="px-6 py-4 text-right">
 {{--                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="this.style.display='none'">Accept</a>--}}
-                            <input id="selected" aria-describedby="remember" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded">
+                            <input id="{{$part->p_name}}" name="{{$part->p_name}}" value="{{$part->id}}" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded">
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
+        </form>
 
         <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
     </div>

@@ -46,11 +46,11 @@ Route::get('/maintenances/table/accept/{maintenance}', [\App\Http\Controllers\Ma
 
 Route::resource('/maintenances', \App\Http\Controllers\MaintenanceController::class);
 
-Route::get('/checklists/', [\App\Http\Controllers\ChecklistController::class, 'index'])->name('checklists.index');
-
-Route::get('/checklists/parts', [\App\Http\Controllers\ChecklistController::class, 'parts'])->name('checklists.parts');
-
 Route::get('/checklists/{checklist}', [\App\Http\Controllers\ChecklistController::class, 'show'])->name('checklists.show');
+
+Route::get('/checklists/{checklist}/parts', [\App\Http\Controllers\ChecklistController::class, 'parts'])->name('checklists.parts');
+
+Route::resource('/checklists', \App\Http\Controllers\ChecklistController::class);
 
 Route::resource('/parts', \App\Http\Controllers\PartController::class);
 

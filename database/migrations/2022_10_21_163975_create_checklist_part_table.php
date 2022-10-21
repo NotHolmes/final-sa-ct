@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('parts', function (Blueprint $table) {
+        Schema::create('checklist_part', function (Blueprint $table) {
             $table->id();
-//            $table->foreignIdFor(\App\Models\Checklist::class)->nullable(); // 'checklist_id'
-            $table->string('p_name');
-            $table->string('p_quantity');
+            $table->foreignIdFor(\App\Models\Checklist::class);
+            $table->foreignIdFor(\App\Models\Part::class);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parts');
+        Schema::dropIfExists('checklist_part');
     }
 };
