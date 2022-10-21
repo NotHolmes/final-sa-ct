@@ -42,7 +42,7 @@
                             <a href="{{ route('checklists.parts', ['checklist' => $checklist]) }}"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Parts</h1></a>
                         </div>
                     </div>
-
+                    @if($checklist->status_id === 2)
                     <div class="flex items-center mt-6">
 
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fschedule-clipart-meeting-schedule-4.png&f=1&nofb=1&ipt=bc71207873012eb239d6252f9cabc93d574bc988746ff35ae59bb6de6595ab49&ipo=images" alt="">
@@ -51,6 +51,64 @@
                             <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Scheduled</h1></a>
                         </div>
                     </div>
+                        <div class="flex items-center mt-6">
+
+                        <div class="-mx-3 flex flex-wrap">
+                            <div class="w-full px-3 sm:w-1/2">
+                                <div class="mb-5">
+                                    <label
+                                        for="date"
+                                        class="mb-3 block text-base font-medium text-[#07074D]"
+                                    >
+                                        Date
+                                    </label>
+                                    <input
+                                        type="date"
+                                        name="date"
+                                        id="date"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                    />
+                                </div>
+                            </div>
+                            <div class="w-full px-3 sm:w-1/2">
+                                <div class="mb-5">
+                                    <label
+                                        for="time"
+                                        class="mb-3 block text-base font-medium text-[#07074D]"
+                                    >
+                                        Time
+                                    </label>
+                                    <input
+                                        type="time"
+                                        name="time"
+                                        id="time"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    @endif
+
+                    @if($checklist->status_id === 3)
+                    <div class="flex items-center mt-6">
+
+                        <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.onlygfx.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fgrunge-yes-no-icon-1-902x1024.png&f=1&nofb=1&ipt=e2c63c0273b6abfd40e33d3958ec50bd6bdeb359d1bfc76001d76ba3de74f96d&ipo=images" alt="">
+
+                        <div class="mx-4">
+                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Completed</h1></a>
+                        </div>
+                    </div>
+                    <div class="flex items-center mt-6">
+
+                        <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.onlygfx.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fgrunge-yes-no-icon-8.png&f=1&nofb=1&ipt=91f726bf494f5e9763bf4556b66998a8cc00ceca83de9803ca6223ec9caa47da&ipo=images" alt="">
+
+                        <div class="mx-4">
+                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Denied</h1></a>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

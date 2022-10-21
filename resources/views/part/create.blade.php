@@ -63,13 +63,3 @@
         </div>
     </div>
 @endsection
-
-<script>
-    function gotoEdit() {
-        console.log(document.getElementById('dropdown').value);
-        window.location.href = '/residents/edit/'.concat(document.getElementById('dropdown').value);
-        // let value = document.getElementById('dropdown').value;
-        {{--window.location.href = '{{ route('residents.edit', ['resident' => document.getElementById('dropdown').value]) }}';--}}
-    }
-
-</script>

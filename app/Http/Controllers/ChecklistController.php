@@ -31,6 +31,7 @@ class ChecklistController extends Controller
         foreach (Part::all() as $part) {
             if($request->has($part->p_name)){
                 $checklist->parts()->attach($part->id);
+                $checklist->status_id = 2;
                 $checklist->save();
             }
         }
