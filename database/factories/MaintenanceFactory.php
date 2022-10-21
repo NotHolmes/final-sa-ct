@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Checklist;
+use App\Models\Resident;
 use App\Models\Status;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -19,8 +20,10 @@ class MaintenanceFactory extends Factory
      */
     public function definition()
     {
+        $user = User::inRandomOrder()->first();
         return [
-            'user_id' => User::inRandomOrder()->first()->id,
+            'user_id' => $user->id,
+            'resident_id' => $user->resident->id,
             'checklist_id' => null,
             'm_image' => null,
             'm_detail' => fake()->realText(200),

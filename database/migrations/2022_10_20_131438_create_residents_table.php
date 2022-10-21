@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('residents', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\User::class); // `user_id`
             $table->integer('r_room_number');
             $table->string('r_name');
             $table->string('r_tel');

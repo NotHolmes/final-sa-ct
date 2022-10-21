@@ -21,7 +21,6 @@ class UserSeeder extends Seeder
             $admin->role = 'ADMIN';
             $admin->username = 'admin';
             $admin->password = Hash::make('password');
-            $admin->room_number = '000';
             $admin->save();
 
             $user = new User();
@@ -29,7 +28,6 @@ class UserSeeder extends Seeder
             $user->role = 'USER';
             $user->username = 'user01';
             $user->password = Hash::make('userpass');
-            $user->room_number = '512';
             $user->save();
 
             $user = new User();
@@ -37,7 +35,6 @@ class UserSeeder extends Seeder
             $user->role = 'EDITOR';
             $user->username = 'org01';
             $user->password = Hash::make('organizationpass');
-            $user->room_number = '999';
             $user->save();
 
         User::factory(3)->create();

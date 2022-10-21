@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,6 +18,7 @@ class ResidentFactory extends Factory
     public function definition()
     {
         return [
+            'user_id' => User::select('id')->distinct()->get()->random()->id,
             'r_room_number' => fake()->unique()->numberBetween(1, 100),
             'r_name' => fake()->name(),
             'r_tel' => fake()->phoneNumber()

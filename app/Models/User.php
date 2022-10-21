@@ -53,9 +53,8 @@ class User extends Authenticatable
         return $this->hasMany(Maintenance::class);
     }
 
-    public function complaints()
-    {
-        return $this->hasMany(Complaint::class);
+    public function resident(){
+        return $this->hasOne(Resident::class);
     }
 
     public function isAdmin()

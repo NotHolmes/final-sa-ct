@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Checklist;
 use App\Models\Maintenance;
+use App\Models\Resident;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,9 +18,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-        $this->call(StatusSeeder::class);
         $this->call(ResidentSeeder::class);
+
+        foreach(Resident::all() as $resident) {
+            $user = User::find($resident->user_id);
+            $user->resident_id = $resident->id;
+            $user->save();
+        }
+
+        $this->call(StatusSeeder::class);
         $this->call(MaintenanceSeeder::class);
+
 //        $this->call(ChecklistSeeder::class);
 
 //        foreach (Checklist::all() as $checklist){

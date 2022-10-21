@@ -5,7 +5,7 @@
 
     <section class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-10 mx-auto">
-            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">Room {{ $maintenance->r_room_number }}</h1>
+            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">Room {{ $maintenance->resident->r_room_number }}</h1>
 
             <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
                 @if($maintenance->m_image !== null)
