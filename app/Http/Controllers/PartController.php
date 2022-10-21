@@ -17,4 +17,26 @@ class PartController extends Controller
     {
         return view('part.create');
     }
+
+    public function store(Request $request)
+    {
+//        $this->authorize('create', Complaint::class);
+
+        if(Part::findByName($request->p_name) == null){
+            $part = new Part();
+            $part->p_name = $request->p_name;
+            $part->p_quantity = $request->p_quantity;
+            $part->save();
+        }
+
+        return view('part.index', ['parts' => Part::all()]);
+    }
+
+    public function update(Request $request, Part $part)
+    {
+        $part->p_quantity = $request->p_quantity;
+        $part->save();
+
+        return view('part.index', ['parts' => Part::all()]);
+    }
 }

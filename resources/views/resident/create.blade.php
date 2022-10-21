@@ -28,9 +28,7 @@
                                     <option value="{{$resident->id}}" >{{ $resident->r_room_number }}</option>
                                 @endforeach
                             </select>
-
                     </div>
-                    {{ $resident->count() }}
                 </div>
                 {{--                                // -------------------------------}}
 

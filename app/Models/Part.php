@@ -13,4 +13,8 @@ class Part extends Model
     {
         return $this->belongsToMany(Checklist::class);
     }
+
+    public function findByName($name){
+        return Part::where('p_name', $this->p_name)->first();
+    }
 }

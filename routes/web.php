@@ -50,9 +50,7 @@ Route::get('/checklists/', [\App\Http\Controllers\ChecklistController::class, 'i
 
 Route::get('/checklists/{checklist}', [\App\Http\Controllers\ChecklistController::class, 'show'])->name('checklists.show');
 
-Route::get('/parts', [\App\Http\Controllers\PartController::class, 'index'])->name('parts.index');
-
-Route::get('/parts/create', [\App\Http\Controllers\PartController::class, 'create'])->name('parts.create');
+Route::resource('/parts', \App\Http\Controllers\PartController::class);
 
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
