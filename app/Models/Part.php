@@ -14,7 +14,7 @@ class Part extends Model
         return $this->belongsToMany(Checklist::class);
     }
 
-    public function findByName($name){
-        return Part::where('p_name', $this->p_name)->first();
+    public function scopeFindByName($query, $name){
+        return $query->where('p_name', 'LIKE', $name)->first();
     }
 }

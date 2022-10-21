@@ -22,7 +22,8 @@ class PartController extends Controller
     {
 //        $this->authorize('create', Complaint::class);
 
-        if(Part::findByName($request->p_name) == null){
+        $part = Part::findByName($request->p_name)->first();
+        if($part == null){
             $part = new Part();
             $part->p_name = $request->p_name;
             $part->p_quantity = $request->p_quantity;
