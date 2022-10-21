@@ -25,12 +25,14 @@ class MaintenanceController extends Controller
     public function accept(Request $request){
         $maintenance = Maintenance::find($request->maintenance);
         $maintenance->is_accepted = true;
-        $maintenance->save();
 
         $checklist = new Checklist();
         $checklist->maintenance_id = $maintenance->id;
         $checklist->status_id = 1;
         $checklist->c_datetime = null;
+
+        $maintenance->checklist_id = $checklist->id;
+        $maintenance->save();
         $checklist->save();
 
         return view('maintenance.table', ['maintenances' => Maintenance::unAccept()->get()->sortBy('created_at', SORT_REGULAR, false)]);

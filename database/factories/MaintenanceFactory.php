@@ -21,7 +21,7 @@ class MaintenanceFactory extends Factory
     {
         return [
             'user_id' => User::inRandomOrder()->first()->id,
-            'checklist_id' => Checklist::inRandomOrder()->first()->id,
+            'checklist_id' => null,
             'm_image' => null,
             'm_detail' => fake()->realText(200),
             'created_at' => fake()->dateTimeBetween('-1 year', 'now'),

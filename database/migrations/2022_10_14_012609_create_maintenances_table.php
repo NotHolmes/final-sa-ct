@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\User::class); // `user_id`
             $table->foreignIdFor(\App\Models\Checklist::class)->nullable(); // checklist_id
             $table->string('m_image')->nullable();
             $table->text('m_detail');

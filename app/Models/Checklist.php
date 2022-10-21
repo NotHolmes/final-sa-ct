@@ -15,6 +15,6 @@ class Checklist extends Model
     }
 
     public function maintenance(){
-        return $this->hasOne(Maintenance::class);
+        return $this->belongsTo(Maintenance::class);
     }
 }
