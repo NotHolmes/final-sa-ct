@@ -19,6 +19,7 @@ class PartFactory extends Factory
         return [
             'p_name' => $this->faker->colorName(),
             'p_quantity' => $this->faker->numberBetween(0, 20),
+            'updated_at' => $this->faker->dateTimeBetween('-1 years', 'now'),
         ];
     }
 }

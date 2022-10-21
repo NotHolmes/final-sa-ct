@@ -48,6 +48,8 @@ Route::resource('/maintenances', \App\Http\Controllers\MaintenanceController::cl
 
 Route::get('/checklists/', [\App\Http\Controllers\ChecklistController::class, 'index'])->name('checklists.index');
 
+Route::get('/checklists/parts', [\App\Http\Controllers\ChecklistController::class, 'parts'])->name('checklists.parts');
+
 Route::get('/checklists/{checklist}', [\App\Http\Controllers\ChecklistController::class, 'show'])->name('checklists.show');
 
 Route::resource('/parts', \App\Http\Controllers\PartController::class);

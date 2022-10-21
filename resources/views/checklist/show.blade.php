@@ -39,8 +39,7 @@
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Fengineering-3%2F64%2Frepair-512.png&f=1&nofb=1&ipt=8a724f0303897788a8316b311b12e3132c8c6e9ee325503a119e0e833fc4a162&ipo=images" alt="">
 
                         <div class="mx-4">
-                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Parts</h1></a>
-
+                            <a href="{{ route('checklists.parts') }}"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Parts</h1></a>
                         </div>
                     </div>
 

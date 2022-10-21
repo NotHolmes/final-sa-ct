@@ -20,8 +20,8 @@
                         LAST UPDATED
                     </th>
                     <th scope="col" class="px-6 py-3">
-{{--                        <span class="sr-only">Edit</span>--}}
-                        <a href="{{ route('parts.create') }}" class="text-xs text-blue-600 dark:text-blue-500 hover:underline">ADD NEW PARTS</a>
+                        {{--                        <span class="sr-only">Edit</span>--}}
+{{--                        <a href="{{ route('checklists.addParts') }}" class="text-xs text-blue-600 dark:text-blue-500 hover:underline">CONFIRM USE</a>--}}
                     </th>
                 </tr>
                 </thead>
@@ -41,7 +41,8 @@
                             {{ $part->updated_at->format('Y M d') }}
                         </td>
                         <td class="px-6 py-4 text-right">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="this.style.display='none'">Accept</a>
+{{--                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="this.style.display='none'">Accept</a>--}}
+                            <input id="selected" aria-describedby="remember" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded">
                         </td>
                     </tr>
                 @endforeach

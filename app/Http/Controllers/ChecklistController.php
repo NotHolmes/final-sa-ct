@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Checklist;
 use App\Models\Maintenance;
+use App\Models\Part;
 use Illuminate\Http\Request;
 
 class ChecklistController extends Controller
@@ -18,4 +19,10 @@ class ChecklistController extends Controller
     {
         return view('checklist.show', ['checklist' => $checklist]);
     }
+
+    public function parts(Checklist $checklist)
+    {
+        return view('checklist.parts', ['checklist' => $checklist, 'parts' => Part::all()]);
+    }
+
 }
