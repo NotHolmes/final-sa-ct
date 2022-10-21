@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         foreach(Resident::all() as $resident) {
             $user = User::find($resident->user_id);
             $user->resident_id = $resident->id;
+            $user->name = $resident->r_name;
             $user->save();
         }
 

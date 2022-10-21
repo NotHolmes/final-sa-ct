@@ -20,10 +20,10 @@ class MaintenanceFactory extends Factory
      */
     public function definition()
     {
-        $user = User::inRandomOrder()->first();
+        $user = User::inRandomOrder()->where('resident_id', '!=', null)->get()->first();
         return [
             'user_id' => $user->id,
-            'resident_id' => $user->resident->id,
+            'resident_id' => $user->resident_id,
             'checklist_id' => null,
             'm_image' => null,
             'm_detail' => fake()->realText(200),

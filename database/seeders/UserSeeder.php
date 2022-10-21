@@ -37,6 +37,6 @@ class UserSeeder extends Seeder
             $user->password = Hash::make('organizationpass');
             $user->save();
 
-        User::factory(3)->create();
+        User::factory(10)->create();
     }
 }
