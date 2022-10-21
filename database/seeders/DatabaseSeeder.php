@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(StatusSeeder::class);
         $this->call(MaintenanceSeeder::class);
+        $this->call(PartSeeder::class);
 
 //        $this->call(ChecklistSeeder::class);
 

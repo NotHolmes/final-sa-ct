@@ -26,11 +26,30 @@
 
                     <div class="flex items-center mt-6">
 
+                        <img class="object-cover object-center w-10 h-10 rounded-full" src="https://cdn4.iconfinder.com/data/icons/construction-flat-round-engineering/512/Residence-512.png" alt="">
+
+                        <div class="mx-4">
+                            <h1 class="text-sm text-gray-700 dark:text-gray-200">Requested by {{ $checklist->maintenance->resident->r_name }}</h1>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $checklist->maintenance->updated_at }}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center mt-6">
+
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Fengineering-3%2F64%2Frepair-512.png&f=1&nofb=1&ipt=8a724f0303897788a8316b311b12e3132c8c6e9ee325503a119e0e833fc4a162&ipo=images" alt="">
 
                         <div class="mx-4">
-                            <h1 class="text-sm text-gray-700 dark:text-gray-200">{{ $checklist->maintenance->resident->r_name }}</h1>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $checklist->maintenance->updated_at }}</p>
+                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Parts</h1></a>
+
+                        </div>
+                    </div>
+
+                    <div class="flex items-center mt-6">
+
+                        <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fschedule-clipart-meeting-schedule-4.png&f=1&nofb=1&ipt=bc71207873012eb239d6252f9cabc93d574bc988746ff35ae59bb6de6595ab49&ipo=images" alt="">
+
+                        <div class="mx-4">
+                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Scheduled</h1></a>
                         </div>
                     </div>
                 </div>

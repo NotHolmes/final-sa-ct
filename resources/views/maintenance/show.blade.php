@@ -29,7 +29,7 @@
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://cdn4.iconfinder.com/data/icons/construction-flat-round-engineering/512/Residence-512.png" alt="">
 
                         <div class="mx-4">
-                            <h1 class="text-sm text-gray-700 dark:text-gray-200">{{ $checklist->maintenance->resident->r_name }}</h1>
+                            <h1 class="text-sm text-gray-700 dark:text-gray-200">Requested by {{ $maintenance->resident->r_name }}</h1>
                             <p class="text-sm text-gray-500 dark:text-gray-400">{{ $maintenance->updated_at }}</p>
                         </div>
                     </div>

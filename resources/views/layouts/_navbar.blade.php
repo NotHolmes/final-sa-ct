@@ -58,6 +58,12 @@
                     Checklists
                 </a>
 
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300"
+                   href="{{ route('parts.index') }}">
+                    Spare parts
+                </a>
+
             </div>
 
             <!-- Icon Menu Section -->

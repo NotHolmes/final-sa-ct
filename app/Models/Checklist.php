@@ -17,4 +17,8 @@ class Checklist extends Model
     public function maintenance(){
         return $this->belongsTo(Maintenance::class);
     }
+
+    public function parts(){
+        return $this->hasMany(Part::class);
+    }
 }
