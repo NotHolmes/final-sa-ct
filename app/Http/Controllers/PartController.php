@@ -35,7 +35,7 @@ class PartController extends Controller
 
     public function update(Request $request, Part $part)
     {
-        $part->p_quantity = $request->p_quantity;
+        $part->p_quantity = (int)$request->p_quantity;
         $part->save();
 
         return view('part.index', ['parts' => Part::all()]);
