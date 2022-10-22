@@ -43,15 +43,19 @@
                         </div>
                     </div>
                     @if($checklist->status_id === 2)
-                    <div class="flex items-center mt-6">
+
+                        <div class="flex items-center mt-6">
 
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fschedule-clipart-meeting-schedule-4.png&f=1&nofb=1&ipt=bc71207873012eb239d6252f9cabc93d574bc988746ff35ae59bb6de6595ab49&ipo=images" alt="">
 
-                        <div class="mx-4">
-                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Scheduled</h1></a>
                         </div>
-                    </div>
+
+
+
                         <div class="flex items-center mt-6">
+                            <form action="{{ route('checklists.update', ['checklist' => $checklist]) }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
 
                         <div class="-mx-3 flex flex-wrap">
                             <div class="w-full px-3 sm:w-1/2">
@@ -87,8 +91,17 @@
                                 </div>
                             </div>
                         </div>
+                                    <button
+                                        class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                                        type="submit"
+                                    >
+                                        Schedule
+                                    </button>
+
+                            </form>
 
                         </div>
+
                     @endif
 
                     @if($checklist->status_id === 3)

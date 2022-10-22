@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Checklist;
 use App\Models\Maintenance;
 use App\Models\Part;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ChecklistController extends Controller
@@ -27,7 +28,13 @@ class ChecklistController extends Controller
 
     public function update(Request $request, Checklist $checklist){
 
-//        dd($request->all());
+        if($request->has('date') && $request->has('time')){
+            $datetime = Carbon::parse($request->date.' '. $request->time)->toDateTime();
+            $checklist->c_datetime = $datetime;
+        }
+
+        dd($request->all(), $checklist->c_datetime);
+
         foreach (Part::all() as $part) {
             if($request->has($part->p_name)){
                 $checklist->parts()->attach($part->id);
