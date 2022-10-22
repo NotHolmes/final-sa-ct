@@ -31,15 +31,15 @@ class ChecklistController extends Controller
         if($request->has('date') && $request->has('time')){
             $datetime = Carbon::parse($request->date.' '. $request->time)->toDateTime();
             $checklist->c_datetime = $datetime;
-        }
-
-        dd($request->all(), $checklist->c_datetime);
-
-        foreach (Part::all() as $part) {
-            if($request->has($part->p_name)){
-                $checklist->parts()->attach($part->id);
-                $checklist->status_id = 2;
-                $checklist->save();
+            $checklist->status_id = 3;
+            $checklist->save();
+        } else {
+            foreach (Part::all() as $part) {
+                if ($request->has($part->p_name)) {
+                    $checklist->parts()->attach($part->id);
+                    $checklist->status_id = 2;
+                    $checklist->save();
+                }
             }
         }
         return view('checklist.show', ['checklist' => $checklist]);

@@ -14,7 +14,7 @@
                     <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"alt="">
                 @endif
                 <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                    <p class="text-sm text-blue-500 uppercase">Checklist</p>
+                    <p class="text-sm text-blue-500 uppercase">{{ $checklist->status->name }}</p>
 
                     <p class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
                         {{ $checklist->maintenance->resident->r_name }}
@@ -70,6 +70,7 @@
                                         type="date"
                                         name="date"
                                         id="date"
+                                        required
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
                                 </div>
@@ -86,6 +87,7 @@
                                         type="time"
                                         name="time"
                                         id="time"
+                                        required
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
                                 </div>
@@ -105,6 +107,17 @@
                     @endif
 
                     @if($checklist->status_id === 3)
+
+                        <div class="flex items-center mt-6">
+
+                            <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimages_k%2Fcalendar-clipart-transparent%2Fcalendar-clipart-transparent-20.png&f=1&nofb=1&ipt=5f7f63cfca9a687327f0839e000f03ee3487d5331f8ec8a54fd741fb8a603dc2&ipo=images" alt="">
+
+                            <div class="mx-4">
+                                <h1 class="text-sm text-gray-700 dark:text-gray-200">Scheduled at {{ date('y-m-d H:i', strtotime($checklist->c_datetime)) }}</h1>
+                            </div>
+
+                        </div>
+
                     <div class="flex items-center mt-6">
 
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.onlygfx.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fgrunge-yes-no-icon-1-902x1024.png&f=1&nofb=1&ipt=e2c63c0273b6abfd40e33d3958ec50bd6bdeb359d1bfc76001d76ba3de74f96d&ipo=images" alt="">

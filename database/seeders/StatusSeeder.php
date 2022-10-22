@@ -18,7 +18,7 @@ class StatusSeeder extends Seeder
         $status = Status::first();
         if (!$status) {
             $this->command->line("Generating Statuses");
-            $statuses = ['รอรับเรื่อง', 'ดำเนินการ', 'เสร็จสิ้น', 'ส่งต่อ', 'ดำเนินการ(เก่า->ใหม่)'];
+            $statuses = ['รอดำเนินการ', 'รอนัดวันช่าง', 'รอซ่อม', 'เสร็จสิ้น'];
 
             collect($statuses)->each(function ($status_name, $key) {
                 $status = new Status();
