@@ -76,4 +76,11 @@ class User extends Authenticatable
     {
         return $this->role === 'RESIDENT';
     }
+
+    public function scopeFindByRoomNumber($query, $roomNumber)
+    {
+        return $query->whereHas('resident', function ($query) use ($roomNumber) {
+            $query->where('r_room_number', $roomNumber);
+        });
+    }
 }

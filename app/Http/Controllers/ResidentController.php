@@ -8,6 +8,7 @@ use App\Models\Organization;
 use App\Models\Resident;
 use App\Models\Tag;
 use App\Models\Status;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Complaint;
 use Faker\Provider\ar_EG\Company;
@@ -63,6 +64,8 @@ class ResidentController extends Controller
         $resident->r_tel = $request->r_tel;
         $resident->save();
 
+//        if()
+
         return redirect()->route('maintenances.index');
     }
 
@@ -74,8 +77,8 @@ class ResidentController extends Controller
      */
     public function show()    // Dependency Injection
     {
-        $statuses = Status::all();
-        return view('maintenance.show', ['complaint' => $complaint, 'statuses' => $statuses]);
+//        $statuses = Status::all();
+//        return view('maintenance.show', ['complaint' => $complaint, 'statuses' => $statuses]);
     }
 
     /**
