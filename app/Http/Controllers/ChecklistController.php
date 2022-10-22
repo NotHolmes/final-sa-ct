@@ -45,9 +45,11 @@ class ChecklistController extends Controller
         }
 
         if($request->has('date') && $request->has('time')){
-            $datetime = Carbon::parse($request->date.' '. $request->time)->toDateTime();
+//            $datetime = Carbon::parse($request->date.' '. $request->time)->toDateTime();
+            $datetime = Carbon::parse($request->date.' '. $request->time);
             $checklist->c_datetime = $datetime;
             $checklist->status_id = 3;
+//            dd($checklist);
             $checklist->save();
         } else {
             foreach (Part::all() as $part) {

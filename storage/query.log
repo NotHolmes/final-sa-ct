@@ -1,0 +1,14 @@
+url         : http://localhost/checklists/3
+method      : PUT
+total_query : 6
+total_time  : 210.28
+--------------------
+
+sl          : 3
+query       : update `checklists` set `status_id` = ?, `checklists`.`updated_at` = ? where `id` = ?
+bindings    : 4|2022-10-23 00:48:06|3
+final_query : update `checklists` set `status_id` = 4, `checklists`.`updated_at` = '2022-10-23 00:48:06' where `id` = 3
+time        : 176.95
+file        : /var/www/html/app/Http/Controllers/ChecklistController.php:43
+line        : 43
+
