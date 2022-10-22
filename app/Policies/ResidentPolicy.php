@@ -28,7 +28,7 @@ class ResidentPolicy
      * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Resident $resident)
+    public function view(User $user)
     {
         return $user->isAdmin();
     }
@@ -51,7 +51,7 @@ class ResidentPolicy
      * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Resident $resident)
+    public function update(User $user)
     {
         return $user->isAdmin();
     }
@@ -63,7 +63,7 @@ class ResidentPolicy
      * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Resident $resident)
+    public function delete(User $user)
     {
         return $user->isAdmin();
     }
@@ -75,7 +75,7 @@ class ResidentPolicy
      * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Resident $resident)
+    public function restore(User $user)
     {
         return $user->isAdmin();
     }

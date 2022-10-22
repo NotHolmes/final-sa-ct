@@ -62,9 +62,28 @@ class ResidentController extends Controller
         $resident->r_name = $request->r_name;
         $resident->r_room_number = $request->r_room_number;
         $resident->r_tel = $request->r_tel;
-        $resident->save();
 
-//        if()
+        $user = User::findByRoomNumber($resident->r_room_number)->first();
+//        dd($user);
+        if($user == null){
+            $user = new User();
+            $user->name = $resident->r_name;
+            $user->role = 'RESIDENT';
+            $user->username = $resident->r_room_number;
+            $user->password = bcrypt($resident->r_tel);
+            $user->resident_id = $resident->id;
+            $user->save();
+        } else {
+            $user->name = $resident->r_name;
+            $user->role = 'RESIDENT';
+            $user->username = $resident->r_room_number;
+            $user->password = bcrypt($resident->r_tel);
+            $user->resident_id = $resident->id;
+            $user->save();
+        }
+
+        $resident->user_id = $user->id;
+        $resident->save();
 
         return redirect()->route('maintenances.index');
     }
@@ -108,6 +127,26 @@ class ResidentController extends Controller
         $resident->r_name = $request->r_name;
         $resident->r_room_number = $request->r_room_number;
         $resident->r_tel = $request->r_tel;
+
+        $user = User::findByRoomNumber($resident->r_room_number)->first();
+        if($user == null){
+            $user = new User();
+            $user->name = $resident->r_name;
+            $user->role = 'RESIDENT';
+            $user->username = $resident->r_room_number;
+            $user->password = bcrypt($resident->r_tel);
+            $user->resident_id = $resident->id;
+            $user->save();
+        } else {
+            $user->name = $resident->r_name;
+            $user->role = 'RESIDENT';
+            $user->username = $resident->r_room_number;
+            $user->password = bcrypt($resident->r_tel);
+            $user->resident_id = $resident->id;
+            $user->save();
+        }
+
+        $resident->user_id = $user->id;
         $resident->save();
 
         return redirect()->route('maintenances.index');

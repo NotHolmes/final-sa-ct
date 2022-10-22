@@ -15,6 +15,11 @@
                 @endif
                 <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <p class="text-sm text-blue-500 uppercase">Maintenance</p>
+                    @if($maintenance->checklist == null)
+                    <p class="text-sm text-gray-500 dark:text-gray-400">สถานะ : รอดำเนินการ</p>
+                    @else
+                        <p class="text-sm text-gray-500 dark:text-gray-400">สถานะ : {{ $maintenance->checklist->status->name }}</p>
+                    @endif
 
                     <p class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
                         {{ $maintenance->user->name }}

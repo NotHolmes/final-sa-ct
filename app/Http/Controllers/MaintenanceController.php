@@ -41,10 +41,11 @@ class MaintenanceController extends Controller
         $checklist->maintenance_id = $maintenance->id;
         $checklist->status_id = 1;
         $checklist->c_datetime = null;
+        $checklist->save();
 
+        // save then generate id
         $maintenance->checklist_id = $checklist->id;
         $maintenance->save();
-        $checklist->save();
 
         return view('maintenance.table', ['maintenances' => Maintenance::unAccept()->get()->sortBy('created_at', SORT_REGULAR, false)]);
     }
@@ -68,6 +69,7 @@ class MaintenanceController extends Controller
             $this->storeImage($request, $maintenance);
         }
 
+        $maintenance->resident_id = auth()->user()->resident->id;
         $maintenance->save();
 
         return view('maintenance.show', ['maintenance' => $maintenance]);
