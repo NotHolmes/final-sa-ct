@@ -26,15 +26,22 @@ class UserSeeder extends Seeder
             $user = new User();
             $user->name = "ยูสเซอร์ 01";
             $user->role = 'USER';
-            $user->username = 'user01';
-            $user->password = Hash::make('userpass');
+            $user->username = 'user';
+            $user->password = Hash::make('password');
             $user->save();
+
+        $user = new User();
+        $user->name = "Resident 01";
+        $user->role = 'RESIDENT';
+        $user->username = 'resident';
+        $user->password = Hash::make('password');
+        $user->save();
 
             $user = new User();
             $user->name = "Organization01";
             $user->role = 'EDITOR';
             $user->username = 'org01';
-            $user->password = Hash::make('organizationpass');
+            $user->password = Hash::make('password');
             $user->save();
 
         User::factory(10)->create();

@@ -41,7 +41,7 @@ class MaintenancePolicy
      */
     public function create(User $user)
     {
-        return $user->isResident();
+        return $user->isResident() or $user->isAdmin();
     }
 
     /**
