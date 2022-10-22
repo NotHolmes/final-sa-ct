@@ -33,17 +33,18 @@
                     Home
                 </a>
 
+                <a class="flex text-gray-600
+                    cursor-pointer transition-colors duration-300
+                    font-semibold text-blue-600"
+                   href={{ route('maintenances.create') }}>
+                    Request a maintenance
+                </a>
+
+                @can('create', App\Models\Checklist::class)
                 <a class="flex text-gray-600 hover:text-blue-500
                     cursor-pointer transition-colors duration-300"
                    href="{{ route('residents.create') }}">
                     Add resident
-                </a>
-
-                <a class="flex text-gray-600
-                    cursor-pointer transition-colors duration-300
-                    font-semibold text-blue-600"
-                    href={{ route('maintenances.create') }}>
-                    Request a maintenance
                 </a>
 
                 <a class="flex text-gray-600 hover:text-blue-500
@@ -63,6 +64,7 @@
                    href="{{ route('parts.index') }}">
                     Spare parts
                 </a>
+                @endcan
 
             </div>
 

@@ -71,4 +71,9 @@ class User extends Authenticatable
     {
         return $this->role === 'USER';
     }
+
+    public function isResident()
+    {
+        return $this->role === 'RESIDENT';
+    }
 }

@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class MaintenanceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index(Request $request)
     {
         $maintenances = Maintenance::all();
@@ -18,11 +23,17 @@ class MaintenanceController extends Controller
     }
 
     public function table(Request $request){
+
+        $this->authorize('viewAny', Checklist::class);
+
         $maintenances = Maintenance::unAccept()->get()->sortBy('created_at', SORT_REGULAR, false);
         return view("maintenance.table", ['maintenances' => $maintenances]);
     }
 
     public function accept(Request $request){
+
+        $this->authorize('viewAny', Checklist::class);
+
         $maintenance = Maintenance::find($request->maintenance);
         $maintenance->is_accepted = true;
 
@@ -40,14 +51,14 @@ class MaintenanceController extends Controller
 
     public function create()
     {
-//        $this->authorize('create', Complaint::class);
+        $this->authorize('create', Maintenance::class);
 
         return view('maintenance.create');
     }
 
     public function store(Request $request)
     {
-//        $this->authorize('create', Complaint::class);
+        $this->authorize('create', Maintenance::class);
 
         $maintenance = new Maintenance();
         $maintenance->user_id = auth()->user()->id;

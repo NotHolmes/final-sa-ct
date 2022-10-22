@@ -58,10 +58,8 @@ Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
 Route::resource('/chart', \App\Http\Controllers\ChartController::class);
 
-Route::get('search', [\App\Http\Controllers\ResidentController::class, 'search'])->name('search');
-
-Route::get('/popular', [\App\Http\Controllers\ResidentController::class, 'popular'])->name('complaint.popular');
-
-//Route::post('/{complaint}/updateStatus', [\App\Http\Controllers\ComplaintController::class, 'updateStatus'])->name('maintenance.updateStatus');
+//Route::group(function(){
+//
+//})->middleware('Auth');
 
 

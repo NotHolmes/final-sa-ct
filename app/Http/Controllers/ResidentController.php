@@ -20,7 +20,7 @@ class ResidentController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show', 'search']);
+        $this->middleware('auth');
     }
 
     /**
@@ -30,20 +30,7 @@ class ResidentController extends Controller
      */
     public function index(Request $request)
     {
-        $complaints = Complaint::latest()->paginate(50);
-        // $statuses = Status::all()->select('status')->distinct()->get()->pluck('status');
-        $statuses = Status::all();
 
-        $complaint = Complaint::query();
-
-        if( $request->filled('status')){
-            $complaint->where('status', $request->status);
-        }
-
-        return view("maintenance.index", [
-            'maintenance' => $complaints,
-            'statuses' => $statuses
-        ]);
     }
 
     /**
@@ -53,7 +40,7 @@ class ResidentController extends Controller
      */
     public function create()
     {
-//        $this->authorize('create', Complaint::class);
+        $this->authorize('create', Resident::class);
         $residents = Resident::all();
         return view('resident.create', [
             'residents' => $residents
@@ -68,12 +55,7 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-//        $this->authorize('create', Resident::class);
-
-//        $validated = $request->validate([
-//            'title' => ['required', 'max:255', 'min:5'],
-//            'description' => ['required', 'max:1000']
-//        ]);
+        $this->authorize('create', Resident::class);
 
         $resident = new Resident();
         $resident->r_name = $request->r_name;
@@ -84,25 +66,13 @@ class ResidentController extends Controller
         return redirect()->route('maintenances.index');
     }
 
-    public function storeImage(Complaint $complaint, Request $request){
-        $file = $request->file('image');
-        $filename = date('YmdHi')."_".$file->getClientOriginalName();
-        $file->move(public_path('/images/maintenance'), $filename);
-        $complaint['image'] = $filename;
-    }
-
-    public function viewImage(Complaint $complaint){
-        $imageData = $complaint['image'];
-        return view();
-    }
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Complaint $complaint)    // Dependency Injection
+    public function show()    // Dependency Injection
     {
         $statuses = Status::all();
         return view('maintenance.show', ['complaint' => $complaint, 'statuses' => $statuses]);
@@ -130,14 +100,8 @@ class ResidentController extends Controller
      */
     public function update(Request $request, Resident $resident)
     {
-//        $this->authorize('create', Complaint::class);
+        $this->authorize('update', Resident::class);
 
-//        $validated = $request->validate([
-//            'title' => ['required', 'max:255', 'min:5'],
-//            'description' => ['required', 'max:1000']
-//        ]);
-
-//        dd(json_encode($request->all()), json_encode($resident->all()), Resident::find($resident));
         $resident->r_name = $request->r_name;
         $resident->r_room_number = $request->r_room_number;
         $resident->r_tel = $request->r_tel;
@@ -146,50 +110,22 @@ class ResidentController extends Controller
         return redirect()->route('maintenances.index');
     }
 
-    public function updateStatus(Request $request, Complaint $complaint){
-
-        $status = $request->get('status');
-        if(!is_null($status))
-            $complaint->status_id = $status;
-        else
-            $complaint->status_id = Status::first()->id;
-
-        $complaint->save();
-
-        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
-    }
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Complaint $complaint)
+    public function destroy(Request $request, Resident $resident)
     {
-        $this->authorize('delete', $complaint);
-
-        $title = $request->input('title');
-        if ($title == $complaint->title) {
-            $complaint->delete();
-            return redirect()->route('maintenance.index');
-        }
-        return redirect()->back();
+//        $this->authorize('delete', $complaint);
+//
+//        $title = $request->input('title');
+//        if ($title == $complaint->title) {
+//            $complaint->delete();
+//            return redirect()->route('maintenance.index');
+//        }
+//        return redirect()->back();
     }
-
-//    public function storeComment(Request $request, Complaint $complaint)
-//    {
-//        $comment = new Comment();
-//        if($request->input('isEditor') == "TRUE")
-//            $comment->isEditor = TRUE;
-//        else
-//            $comment->isEditor = FALSE;
-//
-//        $comment->message = $request->get('message');
-//        $complaint->comments()->save($comment);
-//
-//        // dd($comment->isEditor);
-//        return redirect()->route('maintenance.show', ['complaint' => $complaint->id]);
-//    }
 
 }

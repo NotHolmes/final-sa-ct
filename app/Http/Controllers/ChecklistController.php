@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class ChecklistController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         $checklists = Checklist::all();
