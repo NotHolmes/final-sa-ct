@@ -113,7 +113,11 @@
                             <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimages_k%2Fcalendar-clipart-transparent%2Fcalendar-clipart-transparent-20.png&f=1&nofb=1&ipt=5f7f63cfca9a687327f0839e000f03ee3487d5331f8ec8a54fd741fb8a603dc2&ipo=images" alt="">
 
                             <div class="mx-4">
+                                @if(is_string($checklist->c_datetime))
                                 <h1 class="text-sm text-gray-700 dark:text-gray-200">Scheduled at {{ date('y-m-d H:i', strtotime($checklist->c_datetime)) }}</h1>
+                                @else
+                                <h1 class="text-sm text-gray-700 dark:text-gray-200">Scheduled at {{ $checklist->c_datetime->format('y-m-d H:i') }}</h1>
+                                @endif
                             </div>
 
                         </div>
@@ -123,7 +127,18 @@
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.onlygfx.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fgrunge-yes-no-icon-1-902x1024.png&f=1&nofb=1&ipt=e2c63c0273b6abfd40e33d3958ec50bd6bdeb359d1bfc76001d76ba3de74f96d&ipo=images" alt="">
 
                         <div class="mx-4">
-                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Completed</h1></a>
+
+                            <form action="{{ route('checklists.update', ['checklist' => $checklist, 'done' => true]) }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+
+                            <button type="submit"
+                                    onclick="this.style.display='none'"
+                                    class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline border-0 px-1 py-1">
+                                Completed
+                            </button>
+
+                            </form>
                         </div>
                     </div>
                     <div class="flex items-center mt-6">
@@ -131,9 +146,33 @@
                         <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.onlygfx.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fgrunge-yes-no-icon-8.png&f=1&nofb=1&ipt=91f726bf494f5e9763bf4556b66998a8cc00ceca83de9803ca6223ec9caa47da&ipo=images" alt="">
 
                         <div class="mx-4">
-                            <a href="#"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Denied</h1></a>
+                            <form action="{{ route('checklists.update', ['checklist' => $checklist, 'done' => false]) }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+
+                                <button type="submit"
+                                        onclick="this.style.display='none'"
+                                        class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline border-0 px-1 py-1">
+                                    Denied
+                                </button>
+
+                            </form>
                         </div>
                     </div>
+                    @endif
+
+                    @if($checklist->status_id === 4)
+
+                        <div class="flex items-center mt-6">
+
+                            <img class="object-cover object-center w-10 h-10 rounded-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.iconfinder.com%2Fdata%2Ficons%2Fvibrancie-action%2F30%2Faction_027-checkmark-done-check-finish-512.png&f=1&nofb=1&ipt=ed55663b765be77b75f7df13afcb6ead2498688144ce3f26610947e513d122b6&ipo=images" alt="">
+
+                            <div class="mx-4">
+                                    <h1 class="text-sm text-gray-700 dark:text-gray-200">Finished at {{ date('y-m-d H:i', strtotime($checklist->updated_at)) }}</h1>
+                            </div>
+
+                        </div>
+
                     @endif
                 </div>
             </div>

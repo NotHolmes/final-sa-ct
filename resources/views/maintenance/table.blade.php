@@ -50,45 +50,6 @@
                     </td>
                 </tr>
                 @endforeach
-{{--                <tr--}}
-{{--                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">--}}
-{{--                    <td class="w-4 p-4">--}}
-{{--                    </td>--}}
-{{--                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">--}}
-{{--                        Microsoft Surface Pro--}}
-{{--                    </th>--}}
-{{--                    <td class="px-6 py-4">--}}
-{{--                        White--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4">--}}
-{{--                        Laptop PC--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4">--}}
-{{--                        $1999--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4 text-right">--}}
-{{--                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>--}}
-{{--                    </td>--}}
-{{--                </tr>--}}
-{{--                <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">--}}
-{{--                    <td class="w-4 p-4">--}}
-{{--                    </td>--}}
-{{--                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">--}}
-{{--                        Magic Mouse 2--}}
-{{--                    </th>--}}
-{{--                    <td class="px-6 py-4">--}}
-{{--                        Black--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4">--}}
-{{--                        Accessories--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4">--}}
-{{--                        $99--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4 text-right">--}}
-{{--                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>--}}
-{{--                    </td>--}}
-{{--                </tr>--}}
                 </tbody>
             </table>
         </div>

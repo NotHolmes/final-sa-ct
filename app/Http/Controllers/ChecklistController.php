@@ -28,6 +28,17 @@ class ChecklistController extends Controller
 
     public function update(Request $request, Checklist $checklist){
 
+//        dd($request->all());
+        if($request->has('done')){
+            if($request->input('done')) {
+                $checklist->status_id = 4;
+            } else {
+                $checklist->status_id = 2;
+            }
+            $checklist->save();
+            return view('checklist.show', ['checklist' => $checklist]);
+        }
+
         if($request->has('date') && $request->has('time')){
             $datetime = Carbon::parse($request->date.' '. $request->time)->toDateTime();
             $checklist->c_datetime = $datetime;
