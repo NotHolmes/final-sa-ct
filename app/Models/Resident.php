@@ -18,4 +18,9 @@ class Resident extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeFindByRoomNumber($query, $roomNumber)
+    {
+        return $this->where('r_room_number', $roomNumber)->first();
+    }
 }

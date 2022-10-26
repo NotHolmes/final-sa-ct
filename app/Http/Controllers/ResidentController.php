@@ -58,6 +58,11 @@ class ResidentController extends Controller
     {
         $this->authorize('create', Resident::class);
 
+        $resident = Resident::findByRoomNumber($request->r_room_number);
+        if($resident !== null){
+            return redirect()->route('residents.create')->with('error', 'Room number already exists');
+        }
+
         $resident = new Resident();
         $resident->r_name = $request->r_name;
         $resident->r_room_number = $request->r_room_number;

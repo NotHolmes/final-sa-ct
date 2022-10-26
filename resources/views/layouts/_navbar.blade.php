@@ -19,7 +19,7 @@
                 <a class="cursor-pointer">
                     <h3 class="text-2xl font-medium text-blue-500">
                         <img class="h-10 object-cover"
-                             src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg" alt="Store Logo">
+                             src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnexusfw.com%2Fuploads%2Fpage%2FMaintenance-Management-Logo.png&f=1&nofb=1&ipt=af759939106650904a322b72688f34964fcadfb2a4934d89ca052889caac2715&ipo=images" alt="Store Logo">
 {{--                        todo : change logo--}}
                     </h3>
                 </a>
@@ -33,9 +33,8 @@
                     Home
                 </a>
 
-                <a class="flex text-gray-600
-                    cursor-pointer transition-colors duration-300
-                    font-semibold text-blue-600"
+                <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300"
                    href={{ route('maintenances.create') }}>
                     Request a maintenance
                 </a>

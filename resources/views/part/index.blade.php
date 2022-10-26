@@ -4,7 +4,7 @@
 
     <div class="max-w-2xl mx-auto">
 
-        <div class="relative overflow-x-hidden shadow-md sm:rounded-lg">
+        <div class="relative shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -54,13 +54,12 @@
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                 name="p_quantity"
                                 id="p_quantity"
-                                placeholder="Update quantity"
-                                class="w-14 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base text-xs text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                class="text-black w-11 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base text-xs text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
                         </td>
                         <td class="px-6 py-4 text-right">
                             <button type="submit" class="border-0 font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                               onclick="this.style.display='none'"
+{{--                               onclick="this.style.display='none'"--}}
                             >Confirm</button>
                         </td>
                         </form>

@@ -11,7 +11,7 @@
                 @if($maintenance->m_image !== null)
                     <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="/images/maintenance/{{$maintenance->m_image}}" alt="">
                 @else
-                    <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"alt="">
+                    <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fblackstoneandcompany.com%2Fwp-content%2Fuploads%2F2021%2F03%2FPro-torso.jpg%3Fresize%3D768%252C362%26ssl%3D1&f=1&nofb=1&ipt=c57f6efc18b0acfa5a98dfd4c7522ce1087a7697bcf9e6546ed48a4b5fc45201&ipo=images"alt="">
                 @endif
                 <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <p class="text-sm text-blue-500 uppercase">Maintenance</p>
