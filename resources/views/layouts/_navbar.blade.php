@@ -63,6 +63,12 @@
                    href="{{ route('parts.index') }}">
                     Spare parts
                 </a>
+
+                    <a class="flex text-gray-600 hover:text-blue-500
+                    cursor-pointer transition-colors duration-300"
+                       href="{{ route('reports.index') }}">
+                        Reports
+                    </a>
                 @endcan
 
             </div>

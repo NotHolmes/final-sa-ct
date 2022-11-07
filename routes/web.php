@@ -52,11 +52,13 @@ Route::get('/checklists/{checklist}/parts', [\App\Http\Controllers\ChecklistCont
 
 Route::resource('/checklists', \App\Http\Controllers\ChecklistController::class);
 
-Route::resource('/parts', \App\Http\Controllers\PartController::class);
+Route::resource('/parts', \App\Http\Controllers\ReportController::class);
 
 Route::resource('/statuses', \App\Http\Controllers\StatusController::class);
 
 Route::resource('/chart', \App\Http\Controllers\ChartController::class);
+
+Route::get('/reports', [\App\Http\Controllers\ReportController::class, 'index'])->name('reports.index');
 
 //Route::group(function(){
 //
