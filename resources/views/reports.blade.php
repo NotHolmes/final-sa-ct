@@ -57,7 +57,8 @@
                                 {{ $report['checklist_done'] }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $report['checklist_done_percent'] }}%
+{{--                                format percent 2 decimals--}}
+                                {{ number_format($report['checklist_done_percent'], 2) }}%
                             </td>
                         </tr>
                     @endforeach
