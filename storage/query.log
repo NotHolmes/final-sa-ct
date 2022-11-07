@@ -1,0 +1,14 @@
+url         : http://localhost/checklists/2/parts
+method      : GET
+total_query : 3
+total_time  : 19.36
+--------------------
+
+sl          : 3
+query       : select `parts`.*, `checklist_part`.`checklist_id` as `pivot_checklist_id`, `checklist_part`.`part_id` as `pivot_part_id` from `parts` inner join `checklist_part` on `parts`.`id` = `checklist_part`.`part_id` where `checklist_part`.`checklist_id` = ?
+bindings    : 2
+final_query : select `parts`.*, `checklist_part`.`checklist_id` as `pivot_checklist_id`, `checklist_part`.`part_id` as `pivot_part_id` from `parts` inner join `checklist_part` on `parts`.`id` = `checklist_part`.`part_id` where `checklist_part`.`checklist_id` = 2
+time        : 0.76
+file        : /var/www/html/app/Http/Controllers/ChecklistController.php:32
+line        : 32
+
