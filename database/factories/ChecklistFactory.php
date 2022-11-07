@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Maintenance;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +18,12 @@ class ChecklistFactory extends Factory
     public function definition()
     {
         return [
-            'c_datetime' => $this->faker->dateTimeBetween('-3 month', 'now'),
-            'status_id' => $this->faker->numberBetween(2, 3),
+            // maintenance_id = unique random maintenance.id
+            'maintenance_id' => Maintenance::factory()->create()->id,
+            'created_at' => $this->faker->dateTimeBetween('2021-01-01', '2021-12-31'),
+            // c_datetime need to > created_at
+            'c_datetime' => $this->faker->dateTimeBetween($this->faker->dateTimeBetween('2021-01-01', '2021-12-31'), '2021-12-31'),
+            'status_id' => $this->faker->numberBetween(2, 4),
         ];
     }
 }

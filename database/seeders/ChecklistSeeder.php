@@ -15,7 +15,7 @@ class ChecklistSeeder extends Seeder
      */
     public function run()
     {
-        $this->command->line("Generating 5 checklists");
-        Checklist::factory(5)->create();
+        $this->command->line("Generating 50 checklists");
+        Checklist::factory(50)->create();
     }
 }
