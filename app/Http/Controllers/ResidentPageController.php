@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 use function MongoDB\BSON\toJSON;
 
-class ResidentController extends Controller
+class ResidentPageController extends Controller
 {
 
     public function __construct()

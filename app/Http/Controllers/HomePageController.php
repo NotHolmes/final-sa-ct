@@ -8,7 +8,7 @@ use App\Models\Resident;
 use App\Models\Status;
 use Illuminate\Http\Request;
 
-class MaintenanceController extends Controller
+class HomePageController extends Controller
 {
     public function __construct()
     {

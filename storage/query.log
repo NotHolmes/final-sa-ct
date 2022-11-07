@@ -1,0 +1,14 @@
+url         : http://localhost/maintenances
+method      : GET
+total_query : 2
+total_time  : 15.88
+--------------------
+
+sl          : 1
+query       : select * from `maintenances`
+bindings    : 
+final_query : select * from `maintenances`
+time        : 15.3
+file        : /var/www/html/app/Http/Controllers/MaintenanceController.php:20
+line        : 20
+

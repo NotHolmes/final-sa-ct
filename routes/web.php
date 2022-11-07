@@ -27,24 +27,24 @@ require __DIR__.'/auth.php';
 //Route::post('/maintenance/{complaint}/comments/store', [\App\Http\Controllers\ComplaintController::class, 'storeComment'])
 //    ->name('maintenance.comments.store');
 
-//Route::get('/residents/create',[\App\Http\Controllers\ResidentController::class,'create'])->name('residents.create');
+//Route::get('/residents/create',[\App\Http\Controllers\ResidentPageController::class,'create'])->name('residents.create');
 //
-//Route::post('/residents/store',[\App\Http\Controllers\ResidentController::class,'store'])->name('residents.store');
+//Route::post('/residents/store',[\App\Http\Controllers\ResidentPageController::class,'store'])->name('residents.store');
 //
-//Route::put('/residents/update',[\App\Http\Controllers\ResidentController::class,'update'])->name('residents.update');
+//Route::put('/residents/update',[\App\Http\Controllers\ResidentPageController::class,'update'])->name('residents.update');
 
 
 // ALWAYS USE GET ON TOP OF RESOURCE !!!!!
-Route::get('/residents/edit/{resident}',[\App\Http\Controllers\ResidentController::class,'edit'])->name('residents.edit');
+Route::get('/residents/edit/{resident}',[\App\Http\Controllers\ResidentPageController::class,'edit'])->name('residents.edit');
 
-Route::resource('/residents', \App\Http\Controllers\ResidentController::class);
+Route::resource('/residents', \App\Http\Controllers\ResidentPageController::class);
 
 // ALWAYS USE GET ON TOP OF RESOURCE !!!!!
-Route::get('/maintenances/table', [\App\Http\Controllers\MaintenanceController::class, 'table'])->name('maintenances.table');
+Route::get('/maintenances/table', [\App\Http\Controllers\MaintenanceFormController::class, 'table'])->name('maintenances.table');
 
-Route::get('/maintenances/table/accept/{maintenance}', [\App\Http\Controllers\MaintenanceController::class, 'accept'])->name('maintenances.accept');
+Route::get('/maintenances/table/accept/{maintenance}', [\App\Http\Controllers\MaintenanceFormController::class, 'accept'])->name('maintenances.accept');
 
-Route::resource('/maintenances', \App\Http\Controllers\MaintenanceController::class);
+Route::resource('/maintenances', \App\Http\Controllers\MaintenanceFormController::class);
 
 Route::get('/checklists/{checklist}', [\App\Http\Controllers\ChecklistController::class, 'show'])->name('checklists.show');
 

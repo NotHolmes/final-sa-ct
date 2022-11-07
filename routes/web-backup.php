@@ -26,10 +26,10 @@ Route::get('/pages', [\App\Http\Controllers\PageController::class, 'index']);
 
 Route::get('/pages/{id}', [\App\Http\Controllers\PageController::class, 'show']);
 
-Route::complaint('/maintenance/{complaint}/comments/store', [\App\Http\Controllers\ResidentController::class, 'storeComment'])
+Route::complaint('/maintenance/{complaint}/comments/store', [\App\Http\Controllers\ResidentPageController::class, 'storeComment'])
     ->name('maintenance.comments.store');
 
-Route::resource('/maintenance', \App\Http\Controllers\ResidentController::class);
+Route::resource('/maintenance', \App\Http\Controllers\ResidentPageController::class);
 
 Route::resource('/tags', \App\Http\Controllers\TagController::class);
 
