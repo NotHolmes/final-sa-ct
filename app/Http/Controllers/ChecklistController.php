@@ -28,7 +28,11 @@ class ChecklistController extends Controller
 
     public function parts(Checklist $checklist)
     {
-        return view('checklist.parts', ['checklist' => $checklist, 'parts' => Part::all()]);
+
+        if(count($checklist->parts) > 0)
+            return view('checklist.parts', ['checklist' => $checklist, 'parts' => $checklist->parts]);
+        else
+            return view('checklist.parts', ['checklist' => $checklist, 'parts' => Part::all()]);
     }
 
     public function update(Request $request, Checklist $checklist){

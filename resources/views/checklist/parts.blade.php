@@ -2,6 +2,10 @@
 
 @section('content')
 
+    @if($checklist->parts)
+        <div>{{$checklist->parts}}</div>
+    @endif
+
     <div class="max-w-2xl mx-auto">
 
 {{--        {{dd($checklist->maintenance->resident->r_name)}}--}}
@@ -18,16 +22,24 @@
                     <th scope="col" class="px-6 py-3">
                         NAME
                     </th>
+{{--                    todo: checklist cant add parts--}}
+                    @if(!$checklist->parts)
                     <th scope="col" class="px-6 py-3">
                         QUANTITY
                     </th>
+                    @endif
                     <th scope="col" class="px-6 py-3">
                         LAST UPDATED
                     </th>
+                    @if(!$checklist->parts)
                     <th scope="col" class="px-6 py-3">
                         {{--                        <span class="sr-only">Edit</span>--}}
                         <button type="submit" class="text-xs text-blue-600 dark:text-blue-500 hover:underline border-0">CONFIRM USE</button>
                     </th>
+                    @else
+                        <th>
+                        </th>
+                        @endif
                 </tr>
                 </thead>
                 <tbody>
@@ -40,16 +52,22 @@
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                             {{ $part->p_name }}
                         </th>
+                        @if(!$checklist->parts)
                         <td class="px-6 py-4">
                             {{ $part->p_quantity }}
                         </td>
+                        @endif
                         <td class="px-6 py-4">
                             {{ $part->updated_at->format('Y M d') }}
                         </td>
+                        @if(!$checklist->parts)
                         <td class="px-6 py-4 text-right">
 {{--                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="this.style.display='none'">Accept</a>--}}
                             <input id="{{$part->p_name}}" name="{{$part->p_name}}" value="{{$part->id}}" type="checkbox" class="bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded">
                         </td>
+                            @else
+                            <td></td>
+                            @endif
                     </tr>
                 @endforeach
                 </tbody>
