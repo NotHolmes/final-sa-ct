@@ -21,6 +21,6 @@ class Resident extends Model
 
     public function scopeFindByRoomNumber($query, $roomNumber)
     {
-        return $this->where('r_room_number', $roomNumber)->first();
+        return $query->where('r_room_number', $roomNumber)->first();
     }
 }

@@ -15,6 +15,7 @@ use Faker\Provider\ar_EG\Company;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
+use function MongoDB\BSON\toJSON;
 
 class ResidentController extends Controller
 {
@@ -58,7 +59,7 @@ class ResidentController extends Controller
     {
         $this->authorize('create', Resident::class);
 
-        $resident = Resident::findByRoomNumber($request->r_room_number);
+        $resident = Resident::findByRoomNumber($request->r_room_number)->first();
         if($resident !== null){
             return redirect()->route('residents.create')->with('error', 'Room number already exists');
         }
@@ -90,7 +91,8 @@ class ResidentController extends Controller
         $resident->user_id = $user->id;
         $resident->save();
 
-        return redirect()->route('maintenances.index');
+        // go to create residents
+        return redirect()->route('residents.create');
     }
 
     /**
@@ -154,7 +156,7 @@ class ResidentController extends Controller
         $resident->user_id = $user->id;
         $resident->save();
 
-        return redirect()->route('maintenances.index');
+        return redirect()->route('residents.create');
     }
 
     /**
