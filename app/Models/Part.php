@@ -11,7 +11,7 @@ class Part extends Model
 
     public function checklists()
     {
-        return $this->belongsToMany(Checklist::class);
+        return $this->belongsToMany(Checklist::class, 'checklist_part', 'p_id', 'c_id');
     }
 
     public function scopeFindByName($query, $name){

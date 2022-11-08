@@ -15,10 +15,10 @@ class Checklist extends Model
     }
 
     public function maintenance(){
-        return $this->belongsTo(Maintenance::class);
+        return $this->belongsTo(Maintenance::class, 'c_id');
     }
 
     public function parts(){
-        return $this->belongsToMany(Part::class);
+        return $this->belongsToMany(Part::class, 'checklist_part', 'c_id', 'p_id');
     }
 }

@@ -11,7 +11,7 @@ class Resident extends Model
 
     public function maintenances()
     {
-        return $this->hasMany(Maintenance::class);
+        return $this->hasMany(Maintenance::class, 'r_id');
     }
 
     public function user()

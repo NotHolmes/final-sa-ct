@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id(); // primary key 'id' int auto_increment
-            $table->foreignIdFor(\App\Models\Resident::class)->nullable(); // `resident_id`
+            $table->foreignIdFor(\App\Models\Resident::class, 'r_id')->nullable(); // `r_id`
             $table->string('name'); // varchar(255)
             $table->string('username')->unique(); // varchar(255)
             $table->string('password'); // varchar(60)
