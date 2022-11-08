@@ -16,12 +16,12 @@ class Maintenance extends Model
 
     public function resident()
     {
-        return $this->belongsTo(Resident::class);
+        return $this->belongsTo(Resident::class, 'r_id');
     }
 
     public function checklist()
     {
-        return $this->belongsTo(Checklist::class);
+        return $this->belongsTo(Checklist::class, 'c_id');
     }
 
     public function scopeUnAccept($query)

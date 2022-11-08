@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('checklists', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Maintenance::class)->unique(); // `maintenance_id`
+            $table->unsignedBigInteger('c_id')->nullable();
+            $table->foreignIdFor(\App\Models\Maintenance::class, 'm_id')->unique(); // `m_id`
             $table->foreignIdFor(\App\Models\Status::class);// foreign key 'status_id'
+            $table->unsignedBigInteger('c_status')->default(1);
             $table->dateTime('c_datetime')->nullable();
             $table->timestamps();
         });

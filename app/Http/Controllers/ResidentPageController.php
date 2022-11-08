@@ -77,14 +77,14 @@ class ResidentPageController extends Controller
             $user->role = 'RESIDENT';
             $user->username = $resident->r_room_number;
             $user->password = bcrypt($resident->r_tel);
-            $user->resident_id = $resident->id;
+            $user->r_id = $resident->id;
             $user->save();
         } else {
             $user->name = $resident->r_name;
             $user->role = 'RESIDENT';
             $user->username = $resident->r_room_number;
             $user->password = bcrypt($resident->r_tel);
-            $user->resident_id = $resident->id;
+            $user->r_id = $resident->id;
             $user->save();
         }
 
@@ -142,14 +142,14 @@ class ResidentPageController extends Controller
             $user->role = 'RESIDENT';
             $user->username = $resident->r_room_number;
             $user->password = bcrypt($resident->r_tel);
-            $user->resident_id = $resident->id;
+            $user->r_id = $resident->id;
             $user->save();
         } else {
             $user->name = $resident->r_name;
             $user->role = 'RESIDENT';
             $user->username = $resident->r_room_number;
             $user->password = bcrypt($resident->r_tel);
-            $user->resident_id = $resident->id;
+            $user->r_id = $resident->id;
             $user->save();
         }
 

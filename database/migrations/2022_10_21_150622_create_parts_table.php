@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('parts', function (Blueprint $table) {
             $table->id();
-//            $table->foreignIdFor(\App\Models\Checklist::class)->nullable(); // 'checklist_id'
+            $table->unsignedBigInteger('p_id')->nullable();
             $table->string('p_name');
             $table->string('p_quantity');
             $table->timestamps();
