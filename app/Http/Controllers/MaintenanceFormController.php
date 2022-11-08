@@ -72,7 +72,8 @@ class MaintenanceFormController extends Controller
         $maintenance->r_id = auth()->user()->resident->id;
         $maintenance->save();
 
-        return view('maintenance.show', ['maintenance' => $maintenance]);
+        // redirect to this post
+        return redirect()->route('maintenances.show', ['maintenance' => $maintenance]);
     }
 
     public function storeImage(Request $request, Maintenance $maintenance){
