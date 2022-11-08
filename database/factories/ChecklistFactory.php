@@ -18,8 +18,8 @@ class ChecklistFactory extends Factory
     public function definition()
     {
         return [
-            // m_id = unique random maintenance.id
-            'm_id' => Maintenance::factory()->create()->id,
+            // m_id = new maintenance that is_accepted = true
+            'm_id' => Maintenance::factory()->create(['is_accepted' => true])->id,
             'created_at' => $this->faker->dateTimeBetween('2021-01-01', '2021-12-31'),
             // c_datetime need to > created_at
             'c_datetime' => $this->faker->dateTimeBetween($this->faker->dateTimeBetween('2021-01-01', '2021-12-31'), '2021-12-31'),
