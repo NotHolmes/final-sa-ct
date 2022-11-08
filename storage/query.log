@@ -1,14 +1,550 @@
-url         : http://localhost/checklists/54/parts
+url         : http://localhost/reports
 method      : GET
-total_query : 3
-total_time  : 31.62
+total_query : 69
+total_time  : 53.59
 --------------------
 
+sl          : 2
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 01
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 01
+time        : 1.08
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
 sl          : 3
-query       : select `parts`.*, `checklist_part`.`c_id` as `pivot_c_id`, `checklist_part`.`p_id` as `pivot_p_id` from `parts` inner join `checklist_part` on `parts`.`id` = `checklist_part`.`p_id` where `checklist_part`.`c_id` = ?
-bindings    : 54
-final_query : select `parts`.*, `checklist_part`.`c_id` as `pivot_c_id`, `checklist_part`.`p_id` as `pivot_p_id` from `parts` inner join `checklist_part` on `parts`.`id` = `checklist_part`.`p_id` where `checklist_part`.`c_id` = 54
-time        : 0.6
-file        : /var/www/html/app/Http/Controllers/ChecklistController.php:33
-line        : 33
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 01
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 01
+time        : 0.53
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 4
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 01|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 01 and `status_id` = 4
+time        : 0.38
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 5
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 01
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 01
+time        : 0.33
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 6
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 01|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 01 and `status_id` = 4
+time        : 0.32
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 7
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 01
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 01
+time        : 0.29
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 8
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 02
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 02
+time        : 0.39
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 9
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 02
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 02
+time        : 0.36
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 10
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 02|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 02 and `status_id` = 4
+time        : 0.39
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 11
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 02
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 02
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 12
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 02|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 02 and `status_id` = 4
+time        : 0.31
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 13
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 02
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 02
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 14
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 03
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 03
+time        : 0.29
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 15
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 03
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 03
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 16
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 03|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 03 and `status_id` = 4
+time        : 0.34
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 17
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 03
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 03
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 18
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 03|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 03 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 19
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 03
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 03
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 20
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 04
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 04
+time        : 0.29
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 21
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 04
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 04
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 22
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 04|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 04 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 23
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 04
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 04
+time        : 0.35
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 24
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 04|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 04 and `status_id` = 4
+time        : 0.38
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 25
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 04
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 04
+time        : 0.34
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 26
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 05
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 05
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 27
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 05
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 05
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 28
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 05|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 05 and `status_id` = 4
+time        : 0.31
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 29
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 05
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 05
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 30
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 05|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 05 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 31
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 05
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 05
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 32
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 06
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 06
+time        : 0.31
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 33
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 06
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 06
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 34
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 06|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 06 and `status_id` = 4
+time        : 0.34
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 35
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 06
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 06
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 36
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 06|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 06 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 37
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 06
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 06
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 38
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 07
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 07
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 39
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 07
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 07
+time        : 0.37
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 40
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 07|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 07 and `status_id` = 4
+time        : 0.33
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 41
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 07
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 07
+time        : 0.36
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 42
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 07|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 07 and `status_id` = 4
+time        : 0.31
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 43
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 07
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 07
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 44
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 08
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 08
+time        : 0.29
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 45
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 08
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 08
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 46
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 08|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 08 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 47
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 08
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 08
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 48
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 09
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 09
+time        : 0.31
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 49
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 09
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 09
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 50
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 09|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 09 and `status_id` = 4
+time        : 0.32
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 51
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 09
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 09
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 52
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 09|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 09 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 53
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 09
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 09
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 54
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 10
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 10
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 55
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 10
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 10
+time        : 0.41
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 56
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 10|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 10 and `status_id` = 4
+time        : 0.34
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 57
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 10
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 10
+time        : 0.32
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 58
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 10|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 10 and `status_id` = 4
+time        : 0.31
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 59
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 10
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 10
+time        : 0.31
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 60
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 11
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 11
+time        : 0.29
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 61
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 11
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 11
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 62
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 11|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 11 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 63
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 11
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 11
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 64
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 11|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 11 and `status_id` = 4
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 65
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 11
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 11
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
+
+sl          : 66
+query       : select count(*) as aggregate from `maintenances` where month(`created_at`) = ?
+bindings    : 12
+final_query : select count(*) as aggregate from `maintenances` where month(`created_at`) = 12
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:26
+line        : 26
+
+sl          : 67
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 12
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 12
+time        : 0.3
+file        : /var/www/html/app/Http/Controllers/ReportController.php:27
+line        : 27
+
+sl          : 68
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ? and `status_id` = ?
+bindings    : 12|4
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 12 and `status_id` = 4
+time        : 0.38
+file        : /var/www/html/app/Http/Controllers/ReportController.php:28
+line        : 28
+
+sl          : 69
+query       : select count(*) as aggregate from `checklists` where month(`created_at`) = ?
+bindings    : 12
+final_query : select count(*) as aggregate from `checklists` where month(`created_at`) = 12
+time        : 0.28
+file        : /var/www/html/app/Http/Controllers/ReportController.php:30
+line        : 30
 
