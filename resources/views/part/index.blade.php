@@ -54,7 +54,7 @@
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                 name="p_quantity"
                                 id="p_quantity"
-                                class="text-black w-11 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base text-xs text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                class="text-black w- rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base text-xs text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
                         </td>
                         <td class="px-6 py-4 text-right">
