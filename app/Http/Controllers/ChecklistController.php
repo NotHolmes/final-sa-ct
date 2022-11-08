@@ -29,7 +29,7 @@ class ChecklistController extends Controller
     public function parts(Checklist $checklist)
     {
 
-        if(count($checklist->parts) > 0)
+        if($checklist->status_id == 2)
             return view('checklist.parts', ['checklist' => $checklist, 'parts' => $checklist->parts]);
         else
             return view('checklist.parts', ['checklist' => $checklist, 'parts' => Part::all()]);
@@ -60,9 +60,9 @@ class ChecklistController extends Controller
             foreach (Part::all() as $part) {
                 if ($request->has($part->p_name)) {
                     $checklist->parts()->attach($part->id);
-                    $checklist->status_id = 2;
-                    $checklist->save();
                 }
+                $checklist->status_id = 2;
+                $checklist->save();
             }
         }
         return view('checklist.show', ['checklist' => $checklist]);
