@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Status::class);// foreign key 'status_id'
             $table->unsignedBigInteger('c_status')->default(1);
             $table->dateTime('c_datetime')->nullable();
+            $table->unsignedBigInteger('rewind')->default(0);
             $table->timestamps();
         });
     }

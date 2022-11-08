@@ -42,6 +42,18 @@
                             <a href="{{ route('checklists.parts', ['checklist' => $checklist]) }}"><h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">Parts</h1></a>
                         </div>
                     </div>
+
+                    @if($checklist->rewind)
+                    <div class="flex items-center mt-6">
+
+                        <img class="object-cover object-center w-10 h-10 rounded-full" src="https://www.shareicon.net/data/512x512/2016/05/02/758773_clock_512x512.png" alt="">
+
+                        <div class="mx-4">
+                            <h1 class="text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:underline">rewind count : {{$checklist->rewind}}</h1></a>
+                        </div>
+                    </div>
+                    @endif
+
                     @if($checklist->status_id === 2)
 
                         <div class="flex items-center mt-6">
@@ -67,6 +79,7 @@
                                         Date
                                     </label>
                                     <input
+                                        min="<?= date('Y-m-d'); ?>"
                                         type="date"
                                         name="date"
                                         id="date"

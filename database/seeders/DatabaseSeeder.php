@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         $this->call(ResidentSeeder::class);
 
         // set user's password of that resident = resident's r_tel
-        Resident::all()->each(function ($resident) {
-            $user = User::find($resident->user_id);
-            $user->password = bcrypt($resident->r_tel);
-            $user->save();
-        });
+//        Resident::all()->each(function ($resident) {
+//            $user = User::find($resident->user_id);
+//            $user->password = bcrypt($resident->r_tel);
+//            $user->save();
+//        });
 
         foreach(Resident::all() as $resident) {
             $user = User::find($resident->user_id);

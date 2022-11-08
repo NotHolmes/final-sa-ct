@@ -43,6 +43,7 @@ class ChecklistController extends Controller
                 $checklist->status_id = 4;
             } else {
                 $checklist->status_id = 2;
+                $checklist->rewind += 1;
                 $checklist->c_datetime = null;
             }
             $checklist->save();
