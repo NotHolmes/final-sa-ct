@@ -1,22 +1,14 @@
-url         : http://localhost/maintenances
-method      : POST
-total_query : 3
-total_time  : 47.71
+url         : http://localhost/maintenances/table/accept/20
+method      : GET
+total_query : 2
+total_time  : 31.36
 --------------------
 
 sl          : 2
-query       : select * from `residents` where `residents`.`user_id` = ? and `residents`.`user_id` is not null limit 1
-bindings    : 1
-final_query : select * from `residents` where `residents`.`user_id` = 1 and `residents`.`user_id` is not null limit 1
-time        : 0.78
-file        : /var/www/html/app/Http/Controllers/MaintenanceFormController.php:72
-line        : 72
-
-sl          : 3
-query       : insert into `maintenances` (`user_id`, `m_detail`, `m_image`, `r_id`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?)
-bindings    : 1|asdasdasdadasda|202211081150_63919886-8841-4279-95B5-62CC503AFFA3.jpg|5|2022-11-08 11:50:21|2022-11-08 11:50:21
-final_query : insert into `maintenances` (`user_id`, `m_detail`, `m_image`, `r_id`, `updated_at`, `created_at`) values (1, 'asdasdasdadasda', '202211081150_63919886-8841-4279-95B5-62CC503AFFA3.jpg', 5, '2022-11-08 11:50:21', '2022-11-08 11:50:21')
-time        : 26.4
-file        : /var/www/html/app/Http/Controllers/MaintenanceFormController.php:73
-line        : 73
+query       : select * from `maintenances` where `maintenances`.`id` = ? limit 1
+bindings    : 20
+final_query : select * from `maintenances` where `maintenances`.`id` = 20 limit 1
+time        : 0.65
+file        : /var/www/html/app/Http/Controllers/MaintenanceFormController.php:37
+line        : 37
 
