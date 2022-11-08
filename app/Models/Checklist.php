@@ -15,7 +15,7 @@ class Checklist extends Model
     }
 
     public function maintenance(){
-        return $this->belongsTo(Maintenance::class, 'c_id');
+        return $this->belongsTo(Maintenance::class, 'm_id');
     }
 
     public function parts(){
