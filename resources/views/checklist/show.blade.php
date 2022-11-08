@@ -70,36 +70,19 @@
                                 @method('PUT')
 
                         <div class="-mx-3 flex flex-wrap">
-                            <div class="w-full px-3 sm:w-1/2">
+                            <div class="w-full px-3">
                                 <div class="mb-5">
                                     <label
-                                        for="date"
+                                        for="datetime"
                                         class="mb-3 block text-base font-medium text-[#07074D]"
                                     >
                                         Date
                                     </label>
                                     <input
-                                        min="<?= date('Y-m-d'); ?>"
-                                        type="date"
-                                        name="date"
-                                        id="date"
-                                        required
-                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                    />
-                                </div>
-                            </div>
-                            <div class="w-full px-3 sm:w-1/2">
-                                <div class="mb-5">
-                                    <label
-                                        for="time"
-                                        class="mb-3 block text-base font-medium text-[#07074D]"
-                                    >
-                                        Time
-                                    </label>
-                                    <input
-                                        type="time"
-                                        name="time"
-                                        id="time"
+                                        min="<?= date('Y-m-d H:i'); ?>"
+                                        type="datetime-local"
+                                        name="datetime"
+                                        id="datetime"
                                         required
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />

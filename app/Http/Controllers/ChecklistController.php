@@ -50,7 +50,7 @@ class ChecklistController extends Controller
             return view('checklist.show', ['checklist' => $checklist]);
         }
 
-        if($request->has('date') && $request->has('time')){
+        if($request->has('datetime')){
 //            $datetime = Carbon::parse($request->date.' '. $request->time)->toDateTime();
             $datetime = Carbon::parse($request->date.' '. $request->time);
             $checklist->c_datetime = $datetime;
